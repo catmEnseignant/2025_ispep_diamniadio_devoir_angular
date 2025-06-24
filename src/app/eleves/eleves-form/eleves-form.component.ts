@@ -27,15 +27,15 @@ export class ElevesFormComponent implements OnInit{
   ngOnInit(): void{
     this.isedit = localStorage.getItem("editEleves")
     if(this.isedit == 1){
-      this.elevesedit = localStorage.getItem('curentClasse')
+      this.elevesedit = localStorage.getItem('curentEleves')
       this.elevesedit=JSON.parse(this.elevesedit)
       console.log(this.elevesedit.nom)
       console.log(this.elevesedit)
       this.elevesform= this.fb.group({
         nom:[this.elevesedit.nom],
-        niveau:[this.elevesedit.niveau],
-        serie:[this.elevesedit.serie],
-        nombres_eleve:[this.elevesedit.nombres_eleve]
+        prenom:[this.elevesedit.prenom],
+        adresse:[this.elevesedit.adresse],
+        date_naissance:[this.elevesedit.date_naissance]
       })
     }
     else{
@@ -43,7 +43,7 @@ export class ElevesFormComponent implements OnInit{
         nom:[''],
         prenom:[''],
         adresse:[''],
-        telephone:['']
+        date_naissance:['']
       })
       
     }
