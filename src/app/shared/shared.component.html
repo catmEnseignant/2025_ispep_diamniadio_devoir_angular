@@ -1,15 +1,34 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light py-3">
-    <a class="navbar-brand" href="#">Navbar</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm px-4">
+    <a class="navbar-brand fw-bold" href="#">
+        <i class="bi bi-mortarboard"></i> Agrilegeey
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <div class="navbar-nav">
-            <a class="nav-item nav-link" href="eleves">listes des eleves</a>
-            <a class="nav-item nav-link" href="eleves/ajouter">ajouter eleve</a>
-            <a class="nav-item nav-link" href="enseignant">listes enseignant</a>
-            <a class="nav-item nav-link" href="enseignant/ajouter">ajouter enseigant</a>
 
-        </div>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="eleves">
+                    <i class="bi bi-people-fill me-1"></i> Liste des élèves
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="eleves/ajouter">
+                    <i class="bi bi-person-plus-fill me-1"></i> Ajouter élève
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="enseignant">
+                    <i class="bi bi-person-badge-fill me-1"></i> Liste des enseignants
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="enseignant/ajouter">
+                    <i class="bi bi-person-plus-fill me-1"></i> Ajouter enseignant
+                </a>
+            </li>
+        </ul>
     </div>
 </nav>
