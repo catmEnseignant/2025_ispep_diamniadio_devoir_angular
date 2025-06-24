@@ -1,0 +1,40 @@
+{
+  "enseignants": [
+    {
+      "matricule": "Mart12",
+      "prenom": "Coumba",
+      "nom": "FAYE",
+      "telephone": "777733343",
+      "adresse": " Dakar",
+      "id": 1
+    },
+    {
+      "matricule": "MAT123",
+      "prenom": "Marie",
+      "nom": "Diouf",
+      "telephone": "778980985",
+      "adresse": "Saly",
+      "id": 2
+    }
+  ],
+  "eleves": [
+    {
+      "numero_carte": "ELV001",
+      "prenom": "Amadou",
+      "nom": "Ba",
+      "adresse": "Mbour",
+      "telephone": "111222333",
+      "date_naissance": "2005-03-15",
+      "id": 1
+    },
+    {
+      "numero_carte": "ELV002",
+      "prenom": "Fatou",
+      "nom": "Diop",
+      "adresse": "Thies",
+      "telephone": "444555666",
+      "date_naissance": "2006-07-22",
+      "id": 2
+    }
+  ]
+}

@@ -1,0 +1,130 @@
+/* Importation de Bootstrap et Bootstrap Icons */
+@import 'bootstrap/dist/css/bootstrap.min.css';
+@import 'bootstrap-icons/font/bootstrap-icons.css';
+
+/* Palette de couleurs roses personnalisées */
+:root {
+  --primary-color: #e83e8c;       /* Rose vif */
+  --secondary-color: #f8d7e5;     /* Rose clair */
+  --success-color: #d63384;       /* Rose foncé */
+  --warning-color: #ffc0cb;       /* Rose pastel */
+  --danger-color: #dc3545;
+  --info-color: #f4a5c3;          /* Rose doux */
+  --light-bg: #fff0f5;            /* Rose très clair */
+  --dark-bg: #78244c;             /* Rose prune foncé */
+  --text-dark: #3d0c2c;
+}
+
+/* Style global */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--light-bg);
+  color: var(--text-dark);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Barre de navigation */
+.navbar {
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  background-color: white;
+}
+
+/* Cartes (card Bootstrap) */
+.card {
+  border: 0;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 10px rgba(232, 62, 140, 0.1);
+  transition: box-shadow 0.2s ease-in-out;
+}
+
+.card:hover {
+  box-shadow: 0 6px 20px rgba(232, 62, 140, 0.25);
+}
+
+/* Boutons */
+.btn {
+  border-radius: 0.5rem;
+  font-weight: 600;
+  background-color: var(--primary-color);
+  color: white;
+  transition: all 0.2s ease-in-out;
+  border: none;
+}
+
+.btn:hover {
+  background-color: var(--success-color);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Tableau */
+.table th {
+  border-top: none;
+  font-weight: 600;
+  background-color: var(--secondary-color);
+  color: var(--text-dark);
+}
+
+/* Pied de page */
+.footer {
+  background-color: var(--dark-bg);
+  color: #fff;
+  padding: 1rem 0;
+  text-align: center;
+}
+
+/* Contenu principal */
+.main-content {
+  min-height: calc(100vh - 160px);
+  padding: 2rem 1rem;
+}
+
+/* En-tête de page */
+.page-header {
+  background: linear-gradient(135deg, var(--primary-color), var(--info-color));
+  color: white;
+  padding: 2.5rem 1rem;
+  border-radius: 0.75rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+/* Icônes d’action */
+.action-btn {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fce4ec;
+  color: var(--text-dark);
+  transition: background-color 0.2s ease-in-out;
+}
+
+.action-btn:hover {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+/* Label flottant */
+.form-floating > label {
+  color: #b85c8e;
+}
+
+/* Animation */
+.animate-fade-in {
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
