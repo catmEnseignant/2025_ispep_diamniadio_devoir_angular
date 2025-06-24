@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {ElevesService} from "../../servicec/eleves.service";
 import {ActivatedRoute, Route, Router} from "@angular/router";
 import {CommonModule} from "@angular/common";
+import {routes} from "../../app.routes";
 
 @Component({
   selector: 'app-list',
@@ -33,5 +34,12 @@ export class ListComponent implements OnInit{
             alert("ok")
             this.route.navigate(['eleves'])
         })
+    }
+
+    addP() {
+        this.route.navigate(['eleves/ajouter'])
+    }
+    getNombreEleves() {
+        return this.eleves.length;
     }
 }

@@ -26,7 +26,7 @@ export class EditElComponent implements OnInit{
           this.eleveForm =  this.fb.group({
             nom: data.nom, prenom:data.prenom,
             adresse:data.adresse,tel:data.tel,
-            date:data.date,numero_cart:data.numero_cart
+            date:data.date,matricule:data.matricule
           })
         }
     )

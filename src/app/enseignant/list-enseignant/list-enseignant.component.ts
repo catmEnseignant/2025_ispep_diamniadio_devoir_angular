@@ -29,9 +29,15 @@ export class ListEnseignantComponent implements OnInit{
    }
  delete(id:number){
    return this.se.deleteEnseignant(id).subscribe(data=>{
-     return this.route.navigate(["enseignant"])
+     alert('ok')
 
    })
  }
 
+    addP() {
+        this.route.navigate(['enseignant/ajouter'])
+    }
+    getNombreEnseignants() {
+        return this.eleves.length;
+    }
 }
