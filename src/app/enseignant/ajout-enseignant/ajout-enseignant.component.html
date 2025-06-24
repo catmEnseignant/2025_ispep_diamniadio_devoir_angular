@@ -1,0 +1,26 @@
+<div class="container mt-5">
+    <h2>Ajouter un enseignant</h2>
+    <form [formGroup]="enForm" (ngSubmit)="addenseignant()">
+        <div class="mb-3">
+            <label for="nom" class="form-label">Nom du produit</label>
+            <input type="text" class="form-control w-50" id="nom" formControlName="nom" name="nom">
+        </div>
+
+        <div class="mb-3">
+            <label for="nom" class="form-label">Nom</label>
+            <input type="text" class="form-control w-50" id="" formControlName="nom" name="">
+        </div>
+        <div class="mb-3">
+            <label for="adresse" class="form-label">adress</label>
+            <input type="text" class="form-control w-50" id="" formControlName="adresse" name="">
+        </div>
+
+        <div class="mb-3">
+            <label for="" class="form-label">tel</label>
+            <input type="number" class="form-control w-50" id="" formControlName="tel" name="">
+        </div>
+
+
+        <button type="submit" class="btn btn-primary w-50">Ajouter</button>
+    </form>
+</div>

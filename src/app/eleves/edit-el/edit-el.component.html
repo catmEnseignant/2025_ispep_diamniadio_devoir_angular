@@ -1,0 +1,33 @@
+<div class="container mt-5">
+    <h2>Ajouter un Produit</h2>
+    <form [formGroup]="eleveForm" (ngSubmit)="upEleve()">
+        <div class="mb-3">
+            <label for="nom" class="form-label">Nom du produit</label>
+            <input type="text" class="form-control w-50" id="nom" formControlName="nom" name="nom">
+        </div>
+
+        <div class="mb-3">
+            <label for="nom" class="form-label">Nom</label>
+            <input type="text" class="form-control w-50" id="" formControlName="nom" name="">
+        </div>
+        <div class="mb-3">
+            <label for="nom" class="form-label">numero cart</label>
+            <input type="text" class="form-control w-50" id="" formControlName="numero_cart" name="">
+        </div>
+        <div class="mb-3">
+            <label for="adresse" class="form-label">adress</label>
+            <input type="text" class="form-control w-50" id="" formControlName="adresse" name="">
+        </div>
+
+        <div class="mb-3">
+            <label for="" class="form-label">tel</label>
+            <input type="number" class="form-control w-50" id="" formControlName="tel" name="">
+        </div>
+        <div class="mb-3">
+            <label for="prix" class="form-label">date</label>
+            <input type="text" class="form-control w-50" id="prix" formControlName="date" name="">
+        </div>
+
+        <button type="submit" class="btn btn-primary w-50">Ajouter</button>
+    </form>
+</div>

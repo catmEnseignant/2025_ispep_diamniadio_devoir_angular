@@ -1,0 +1,38 @@
+<div class="container mt-5">
+    <div class="d-flex justify-content-between py-2">
+        <h2>Liste des eleves</h2>
+<!--        <button class="btn btn-primary " (click)="addP()">Ajouter produit</button>-->
+    </div>
+
+    <table class="table table-bordered table-striped">
+        <thead class="table-dark">
+        <tr>
+            <th>id</th>
+            <th>prenom</th>
+            <th>nom</th>
+            <th>adresse</th>
+            <th>tel</th>
+            <th>cart</th>
+
+            <th>actions</th>
+
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let eleve of eleves">
+            <td>{{eleve.id}}</td>
+            <td>{{eleve.prenom}}</td>
+            <td>{{eleve.nom}}</td>
+            <td>{{eleve.adresse}}</td>
+            <td>{{eleve.tel}}</td>
+            <td>{{eleve.numero_cart}}</td>
+
+            <td>
+                <button class="btn btn-warning btn-sm" (click)="updated(eleve.id)">Modifier</button>
+                <button class="btn btn-danger btn-sm mx-2" (click)="delete(eleve.id)">Supprimer</button>
+            </td>
+        </tr>
+        <!-- Ajoute d'autres lignes ici si besoin -->
+        </tbody>
+    </table>
+</div>
