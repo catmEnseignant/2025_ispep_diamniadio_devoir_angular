@@ -1,0 +1,49 @@
+<div class="card container-fluid">
+    <div class="card-header">
+        <div class="row">
+            <div class="col-4">
+                <h4>Formulaire eleves</h4>
+            </div>
+            <div class="col-4">
+                <h4>Nombre de eleves</h4>
+            </div>
+        </div>
+    </div>
+    <div class="card-body">
+        <div class="container">
+            <form [formGroup]="eleveform" (ngSubmit)="submitEleve()">
+                <div class="row">
+                    <div class="col-6">
+                        <label for="matricule" class="form-label">Numero de Carte</label>
+                        <input type="matricule" class="form-control" formControlName="matricule" id="matricule">
+                    </div>
+                    <div class="col-6">
+                        <label for="prenom" class="form-label">Prenom</label>
+                        <input type="prenom" class="form-control" formControlName="prenom" id="prenom">
+                    </div>
+                    <div class="col-6">
+                        <label for="nom" class="form-label">NOM</label>
+                        <input type="nom" class="form-control" formControlName="nom" id="nom">
+                    </div>
+                    <div class="col-6">
+                        <label for="telephone" class="form-label">Telephone</label>
+                        <input type="string" class="form-control"  formControlName="telephone" id="telephone">
+                    </div>
+                    <div class="col-6">
+                        <label for="adresse" class="form-label">Adresse</label>
+                        <input type="string" class="form-control"  formControlName="adresse" id="adresse">
+                    </div>
+                    <div class="col-6">
+                        <label for="date_naissance" class="form-label">Date de naissance</label>
+                        <input type="date" class="form-control"  formControlName="date_naissance" id="date_naissance">
+                    </div>
+                </div>
+        
+                <div class="row">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>
