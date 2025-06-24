@@ -47,13 +47,13 @@ export class ListeEleveComponent implements OnInit{
   }
   addEleve(){
     //console.log("add initialiser")
-    localStorage.setItem("editClasse","0")
+    localStorage.setItem("editEleve","0")
     return this.route.navigate(["/eleves/form-eleve"])
   }
   deleteEleve(eleve:any){
     let sup = confirm("Voulez vous suprimer")
     if (sup){
-      this.eleveService.deleteEleves(eleve.id).subscribe(
+      this.eleveService.deleteEleve(eleve.id).subscribe(
         (response) => {
           alert("classe bien supprimer")
          

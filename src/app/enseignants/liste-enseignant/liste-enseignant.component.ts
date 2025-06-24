@@ -2,65 +2,62 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { CommonModule } from '@angular/common';
-import { HttpClient } from '@angular/common/http';
-import { error } from 'console';
-import { EnseignantService } from '../../services/enseignants/enseignant.service';
-
+import { EnseignantsService } from '../../services/enseignants/enseignant.service';
 
 @Component({
   selector: 'app-liste-enseignant',
-  imports: [CommonModule,],
+  imports: [CommonModule],
   templateUrl: './liste-enseignant.component.html',
-  styleUrl: './liste-enseignant.component.css'
+  styleUrls: ['./liste-enseignant.component.css']
 })
-export class ListeEnseignantComponent implements OnInit{
-  enseignants:any
-   nombres_eleve:number = 0
+export class ListeEnseignantComponent implements OnInit {
+  enseignants: any;
+  nombres_enseignant: number = 0;
 
-
-  constructor(private route:Router,private enseignantService: EnseignantService){
-    console.log("constructeurr")
+  constructor(
+    private router: Router,
+    private enseignantService: EnseignantsService
+  ) {
+    console.log("Constructeur ListeEnseignantComponent");
   }
-  ngOnInit(){
-   this.enseignantService.getEnseignants().subscribe(
+
+  ngOnInit() {
+    this.enseignantService.getEnseignants().subscribe(
       (response) => {
-        this.enseignants = response
-        console.log(this.enseignants.length)
+        this.enseignants = response;
+        this.nombres_enseignant = this.enseignants.length;
+        console.log(this.nombres_enseignant);
       },
       (error) => {
-        console.log(error )
-      },
-    )
-    //this. nombres_eleve = this.classes.length
-    //console.log(this.nombres_eleve) 
-    
+        console.error(error);
+      }
+    );
   }
-  editEnseignant(editEnseignant:any){
-    console.log(editEnseignant)
-    editEnseignant = JSON.stringify(editEnseignant)
-    localStorage.setItem("curentEnseignant",editEnseignant)
-    localStorage.setItem("editEnseignant","1")
-    return this.route.navigate(["/enseignants/form-enseignant"])
 
+  editEnseignant(enseignant: any) {
+    console.log(enseignant);
+    localStorage.setItem("currentEnseignant", JSON.stringify(enseignant));
+    localStorage.setItem("editEnseignant", "1");
+    return this.router.navigate(["/enseignants/form-enseignant"]);
   }
-  addEnseignant(){
-    //console.log("add initialiser")
-    localStorage.setItem("editEnseignant","0")
-    return this.route.navigate(["/enseignants/form-enseignant"])
+
+  addEnseignant() {
+    localStorage.setItem("editEnseignant", "0");
+    return this.router.navigate(["/enseignants/form-enseignant"]);
   }
-  deleteEnseignant(enseignant:any){
-    let sup = confirm("Voulez vous suprimer")
-    if (sup){
-      this.enseignantService.deleteEnseignants(enseignant.id).subscribe(
+
+  deleteEnseignant(enseignant: any) {
+    if (confirm("Voulez-vous supprimer cet enseignant ?")) {
+      this.enseignantService.deleteEnseignant(enseignant.id).subscribe(
         (response) => {
-          alert("enseignant bien supprimer")
-         
+          alert("Enseignant supprimé avec succès");
+          // Optionnel : recharger la liste après suppression
+          this.ngOnInit();
         },
         (error) => {
-          console.log(error )
-        },
-      )
+          console.error(error);
+        }
+      );
     }
-    console.log(enseignant)
   }
 }

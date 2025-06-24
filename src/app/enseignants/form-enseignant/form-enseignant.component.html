@@ -1,46 +1,53 @@
 <div class="card container-fluid">
     <div class="card-header">
-        <div class="row">
-            <div class="col-4">
-                <h4>Formulaire Enseignat</h4>
-            </div>
-            <div class="col-4">
-                <h4>Nombre de Enseignat</h4>
-            </div>
+      <div class="row">
+        <div class="col-6">
+          <h4>Formulaire Enseignant</h4>
         </div>
+      </div>
     </div>
+  
     <div class="card-body">
-        <div class="container">
-            
-            <form [formGroup]="enseignantform" (ngSubmit)="submitEnseignant()">
-                <div class="row">
-                    <div class="col-6">
-                        <label for="nom" class="form-label">NOM</label>
-                        <input type="nom" class="form-control" formControlName="nom" id="nom">
-                    </div>
-                    <div class="col-6">
-                        <label for="niveau" class="form-label">Niveau</label>
-                        <input type="niveau" class="form-control"  formControlName="niveau" id="niveau">
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-6">
-                        <label for="serie" class="form-label">Série</label>
-                        <input type="serie" class="form-control" formControlName="serie" id="serie">
-                    </div>
-                    <div class="col-6">
-                        <label for="nombres_eleve"class="form-label">Nombres d'élève</label>
-                        <input type="nombres_eleve" class="form-control" formControlName="nombres_eleve" id="nombres_eleve">
-                    </div>
-                </div>
-                <div class="row">
-                    <button type="submit" class="btn btn-primary">Submit</button>
-                </div>
-            </form>
-
+      <form [formGroup]="enseignantform" (ngSubmit)="submitEnseignant()">
+        <div class="row">
+          <div class="col-6">
+            <label for="matricule" class="form-label">Matricule</label>
+            <input type="text" class="form-control" id="matricule" formControlName="matricule">
+          </div>
+          <div class="col-6">
+            <label for="prenom" class="form-label">Prénom</label>
+            <input type="text" class="form-control" id="prenom" formControlName="prenom">
+          </div>
         </div>
+  
+        <div class="row">
+          <div class="col-6">
+            <label for="nom" class="form-label">Nom</label>
+            <input type="text" class="form-control" id="nom" formControlName="nom">
+          </div>
+          <div class="col-6">
+            <label for="telephone" class="form-label">Téléphone</label>
+            <input type="text" class="form-control" id="telephone" formControlName="telephone">
+          </div>
+        </div>
+  
+        <div class="row">
+          <div class="col-6">
+            <label for="adresse" class="form-label">Adresse</label>
+            <input type="text" class="form-control" id="adresse" formControlName="adresse">
+          </div>
+          <div class="col-6">
+            <label for="date_embauche" class="form-label">Date d'embauche</label>
+            <input type="date" class="form-control" id="date_embauche" formControlName="date_embauche">
+          </div>
+        </div>
+  
+        <div class="row mt-3">
+          <div class="col-12">
+            <button type="submit" class="btn btn-primary">Enregistrer</button>
+          </div>
+        </div>
+      </form>
     </div>
-</div>
-
-
-
+  </div>
+  

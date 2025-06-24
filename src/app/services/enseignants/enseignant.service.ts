@@ -1,29 +1,38 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+
+export interface Enseignant {
+  id?: number;
+  matricule: string;
+  prenom: string;
+  nom: string;
+  telephone: string;
+  adresse: string;
+  date_embauche: string;
+}
 
 @Injectable({
   providedIn: 'root'
 })
-export class EnseignantService {
-  host="http://localhost:3000"
+export class EnseignantsService {
+  private apiUrl = 'http://localhost:3000/enseignants';
 
-  constructor(private httpClient: HttpClient) { }
-  
+  constructor(private http: HttpClient) {}
 
-  getEnseignants(){
-    return   this.httpClient.get(this.host+"/enseignants")
+  getEnseignants(): Observable<Enseignant[]> {
+    return this.http.get<Enseignant[]>(this.apiUrl);
   }
 
-  storeEnseignants(enseignant :any){
-    return   this.httpClient.post(this.host+"/enseignants",enseignant)
-  }
-  updateEnseignants(id_enseignant:any,enseignant :any){
-    return   this.httpClient.put(this.host+"/classes/"+id_enseignant,enseignant)
-  }
-  deleteEnseignants(id_enseignant:any){
-    return   this.httpClient.delete(this.host+"/enseignants/"+id_enseignant)
+  storeEnseignant(enseignant: Enseignant): Observable<Enseignant> {
+    return this.http.post<Enseignant>(this.apiUrl, enseignant);
   }
 
-  
-  
+  updateEnseignant(id: number, enseignant: Enseignant): Observable<Enseignant> {
+    return this.http.put<Enseignant>(`${this.apiUrl}/${id}`, enseignant);
+  }
+
+  deleteEnseignant(id: number): Observable<void> {
+    return this.http.delete<void>(`${this.apiUrl}/${id}`);
+  }
 }

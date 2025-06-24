@@ -1,3 +1,133 @@
 /* You can add global styles to this file, and also import other style files */
 @import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 
+
+
+@import url('https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css');
+
+.home-container {
+  background: linear-gradient(135deg, #4e73df, #224abe);
+  height: 100vh;
+  color: white;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.4);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 0 20px;
+}
+
+/* Bouton stylé */
+.btn-outline-light {
+  border-width: 2px;
+  font-weight: 600;
+  padding: 12px 30px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.btn-outline-light:hover {
+  background-color: white;
+  color: #224abe;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+}
+
+/* Responsive */
+@media (max-width: 576px) {
+  .display-1 {
+    font-size: 3rem !important;
+  }
+  .btn-lg {
+    width: 100%;
+  }
+}
+
+
+/* Card avec ombre douce */
+.card {
+    border-radius: 0.75rem;
+    box-shadow: 0 0.5rem 1.2rem rgba(0,0,0,0.1);
+    background-color: #ffffff;
+    transition: box-shadow 0.3s ease-in-out;
+  }
+  
+  .card:hover {
+    box-shadow: 0 1rem 2rem rgba(0,0,0,0.15);
+  }
+  
+  /* En-tête */
+  .card-header {
+    background-color: #4e73df;
+    color: white;
+    font-weight: 700;
+    font-size: 1.25rem;
+    border-bottom: none;
+    padding: 1rem 1.5rem;
+  }
+  
+  /* Table */
+  .table {
+    border-collapse: separate;
+    border-spacing: 0 0.75rem;
+    font-size: 0.95rem;
+  }
+  
+  .table thead th {
+    border-bottom: none;
+    font-weight: 700;
+    color: #224abe;
+  }
+  
+  .table tbody tr {
+    background-color: #f8f9fc;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 6px rgb(34 74 190 / 0.1);
+    transition: background-color 0.3s ease;
+  }
+  
+  .table tbody tr:hover {
+    background-color: #e9f0ff;
+    cursor: pointer;
+  }
+  
+  /* Boutons actions */
+  .btn-warning {
+    background-color: #f6c23e;
+    border: none;
+    color: #fff;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn-warning:hover {
+    background-color: #dda20a;
+  }
+  
+  .btn-danger {
+    background-color: #e74a3b;
+    border: none;
+    color: #fff;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn-danger:hover {
+    background-color: #be2617;
+  }
+  
+  /* Icônes */
+  .bi {
+    font-size: 1.2rem;
+    vertical-align: middle;
+  }
+  
+  /* Responsive : pour petites résolutions */
+  @media (max-width: 768px) {
+    .card-header {
+      flex-direction: column;
+      gap: 0.5rem;
+      text-align: center;
+    }
+    .card-header h4, .card-header h5, .card-header button {
+      width: 100%;
+    }
+    .btn {
+      width: 100%;
+    }
+  }
+  
+
