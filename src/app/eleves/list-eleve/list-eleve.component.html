@@ -1,1 +1,48 @@
-<p>list-eleve works!</p>
+<div class="container mt-4">
+  <div *ngIf="!loading">
+    <app-loader></app-loader>
+  </div>
+  <div class="row mb-2 text-center">
+    <div class="col-4">
+      <h2 class="fw-bold text-secondary">La liste des élèves</h2>
+    </div>
+    <div class="col-6">
+      <h2 class="fw-bold text-secondary">Nombre d'élèves ({{eleves.length}})</h2>
+    </div>
+    <div class="col-2">
+        <button class="btn btn-primary text-center fw-bold" (click)="ajouterEleve()">Add</button>
+    </div>
+  </div>
+  <table class="table text-center">
+    <thead class="table-light">
+      <tr>
+        <th scope="col">Prenom</th>
+        <th scope="col">Nom</th>
+        <th scope="col">Téléphone</th>
+        <th scope="col">Adresse</th>
+        <th scope="col">Numéro carte</th>
+        <th scope="col">Date naissance</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of eleves ">
+        <td>{{ item.prenom }}</td>
+        <td>{{ item.nom }}</td>
+        <td>{{ item.telephone }}</td>
+        <td>{{ item.adresse }}</td>
+        <td>{{ item.numero_carte }}</td>
+        <td>{{ item.date_naissance }}</td>
+        <td>
+          <button class="btn btn-warning btn-sm me-2" (click)="editEleve(item)">
+            <i class="bi bi-pencil-square"></i>
+          </button>
+          <button class="btn btn-danger btn-sm" (click)="deleteEleve(item)">
+            <i class="bi bi-trash"></i>
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+

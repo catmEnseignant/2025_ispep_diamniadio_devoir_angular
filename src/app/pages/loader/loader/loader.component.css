@@ -1,0 +1,24 @@
+.loading-container{
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.loader-spinner{
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    border: 10px solid #eee;
+    border-top: 10px solid orangered;
+
+    animation: loader 2s linear infinite;
+}
+
+@keyframes loader{
+    0%{
+        transform: rotate(0deg);
+    }100%{
+        transform: rotate(360deg);
+    }
+}

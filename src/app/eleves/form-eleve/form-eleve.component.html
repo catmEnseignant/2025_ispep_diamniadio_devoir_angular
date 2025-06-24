@@ -1,1 +1,38 @@
-<p>form-eleve works!</p>
+<div class="container my-3">
+  <div class="row text-center text-info">
+    <div class="col-12">
+      <h2 class="fw-bold">Ajouter élève</h2>
+    </div>
+  </div>
+  <form [formGroup]="eleveForm" (ngSubmit)="storeEleve()">
+  <div class="row">
+    <div class="col-md-6">
+      <label class="form-label text-secondary fw-bold" for="nom">Nom</label>
+      <input class="form-control" type="text" formControlName="nom" id="nom" required>
+    </div>
+    <div class="col-md-6">
+      <label class="form-label text-secondary fw-bold" for="prenom">Prénom</label>
+      <input class="form-control" type="text" formControlName="prenom" id="prenom" required>
+    </div>
+    <div class="col-md-6">
+      <label class="form-label text-secondary fw-bold" for="adresse">Adresse</label>
+      <input class="form-control" type="text" formControlName="adresse" id="adresse" required>
+    </div>
+    <div class="col-md-6">
+      <label class="form-label text-secondary fw-bold" for="telephone">Téléphone</label>
+      <input class="form-control" type="number" formControlName="telephone" id="telephone" required>
+    </div>
+    <div class="col-md-6">
+      <label class="form-label text-secondary fw-bold" for="date_naissance">Date naissance</label>
+      <input class="form-control" type="date" formControlName="date_naissance" id="date_naissance" required>
+    </div>
+    <div class="col-md-6">
+      <label class="form-label text-secondary fw-bold" for="numero_carte">Numéro carte</label>
+      <input class="form-control" type="text" formControlName="numero_carte" id="numero_carte" required>
+    </div>
+    <div class="col-md-12">
+      <button class="btn btn-info fw-bold w-100 mt-2" type="submit">Ajouter</button>
+    </div>
+    </div>
+  </form>
+</div>

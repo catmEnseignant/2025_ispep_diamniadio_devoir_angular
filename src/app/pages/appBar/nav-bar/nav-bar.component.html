@@ -1,5 +1,5 @@
-<nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top">
-  <div class="container-fluid px-5">
+<nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top mb-5">
+  <div class="container-fluid px-4">
     <a href="">
     <img src="images/10215133.png.png" style="width: 50px; height: 50px; border-radius: 100%;" class="me-3">
     </a>
@@ -13,9 +13,7 @@
             Enseignants
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item fw-bold" [routerLink]="['enseignants/form-enseignant']" routerLinkActive="router-link-active" >Ajouter</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item fw-bold" [routerLink]="['enseignants/list-enseignant']">List</a></li>
+            <li><a class="dropdown-item fw-bold" [routerLink]="['enseignants/list-enseignant']">List enseignants</a></li>
           </ul>
         </li>
         <li class="nav-item dropdown">
@@ -23,9 +21,7 @@
             Eleves
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item fw-bold" [routerLink]="['eleves/form-eleve']" routerLinkActive="router-link-active" >Ajouter</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item fw-bold" [routerLink]="['eleves/list-eleve']">List</a></li>
+            <li><a class="dropdown-item fw-bold" [routerLink]="['eleves/list-eleve']">List eleves</a></li>
           </ul>
         </li>
       </ul>
