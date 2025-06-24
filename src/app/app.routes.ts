@@ -7,7 +7,7 @@ export const APP_ROUTES: Routes = [
         loadChildren:() => import("./enseignants/enseignants.routes").then((m) => m.ENSEIGNANTS_ROUTES)
     },
 
-    {path:"eleves",
+    {path:"eleve",
         loadChildren:() => import("./eleves/eleves.routes").then((m) => m.ELEVES_ROUTES)
     },
 

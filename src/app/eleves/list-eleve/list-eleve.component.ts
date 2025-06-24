@@ -31,8 +31,7 @@ export class ListEleveComponent implements OnInit{
         console.log(error )
       },
     )
-    //this. nombres_eleve = this.classes.length
-    //console.log(this.nombres_eleve) 
+
     
   }
   editEleve(editEleve:any){
@@ -44,7 +43,6 @@ export class ListEleveComponent implements OnInit{
 
   }
   addEleve(){
-    //console.log("add initialiser")
     localStorage.setItem("editEleve","0")
     return this.route.navigate(["/eleve/form-eleve"])
   }

@@ -17,7 +17,7 @@ import { EleveServiceService } from '../../services/eleves/eleve.service';
 export class FormEleveComponent implements OnInit {
   
   eleveform:FormGroup
-  eleve:any
+  elevedit:any
   isedit:any
   
 
@@ -29,8 +29,8 @@ export class FormEleveComponent implements OnInit {
     this.isedit = localStorage.getItem("editEleve")
     if(this.isedit == 1){
       this.elevedit = localStorage.getItem('curentEleve')
-      this.eleve=JSON.parse(this.eleve)
-      console.log(this.eleve.nom)
+      this.elevedit=JSON.parse(this.elevedit)
+      console.log(this.elevedit.nom)
       console.log(this.elevedit)
       this.eleveform= this.fb.group({
         numero_carte:[this.elevedit.numero_carte],
@@ -60,7 +60,7 @@ export class FormEleveComponent implements OnInit {
     if(this.isedit == 1){
     this.eleveService.updateEleves(this.elevedit.id,this.eleveform.value).subscribe(
       (response) => {
-        return this.route.navigate(["/enseignants/form-enseignant"])
+        return this.route.navigate(["/eleve/form-eleve"])
       },
       (error) =>{
         console.log(error)
@@ -69,7 +69,7 @@ export class FormEleveComponent implements OnInit {
     }else{
       this.eleveService.storeEleves(this.eleveform.value).subscribe(
         (response) => {
-          return this.route.navigate(["/enseignants/form-enseignant"])
+          return this.route.navigate(["/eleves/form-eleve"])
         },
         (error) =>{
           console.log(error)

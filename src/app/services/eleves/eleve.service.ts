@@ -14,11 +14,11 @@ export class EleveServiceService {
   }
 
   storeEleves(eleve: any) {
-    return this.httpClient.post(this.host + "/eleves", eleve);
+    return this.httpClient.post(this.host + "/eleves",eleve);
   }
 
   updateEleves(id_eleve: any, eleve: any) {
-    return this.httpClient.put(this.host + "/eleves/" + id_eleve, eleve);
+    return this.httpClient.put(this.host + "/eleves/" + id_eleve,eleve);
   }
 
   deleteEleves(id_eleve: any) {

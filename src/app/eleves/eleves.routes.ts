@@ -4,15 +4,12 @@ import { FormEleveComponent } from './form-eleve/form-eleve.component';
 
 
 
-
-
-
 export const ELEVES_ROUTES: Routes = [
-    {path:"liste-eleve",component:ListEleveComponent},
-    {path:"form-eleve",component:FormEleveComponent},
-    {path:"",redirectTo:"/list-eleve",pathMatch:"full"},
-   
+  { path: "list-eleve",component:ListEleveComponent },
+  { path: "form-eleve",component:FormEleveComponent },
+  { path: "", redirectTo: "list-eleve", pathMatch: "full" },
 ];
+
 
 
 
