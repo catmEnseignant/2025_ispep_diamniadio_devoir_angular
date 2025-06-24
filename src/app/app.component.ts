@@ -1,29 +1,20 @@
-import {Component, OnInit} from '@angular/core';
+import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import {HttpClient} from "@angular/common/http";
+import { NavbarComponent } from './shared/navbar.component';
+import { FooterComponent } from './shared/footer.component';
 
 @Component({
   selector: 'app-root',
-  imports: [],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  standalone: true,
+  imports: [RouterOutlet, NavbarComponent, FooterComponent],
+  template: `
+    <app-navbar></app-navbar>
+    <div class="container mt-4">
+      <router-outlet></router-outlet>
+    </div>
+    <app-footer></app-footer>
+  `
 })
-export class AppComponent implements OnInit{
-  title = 'angular_project';
-
-  constructor( private httpClient: HttpClient) {
-
-  }
-
-  ngOnInit() {
-    this.httpClient.get("http://localhost:3000/eleves").subscribe(
-        (response) =>{
-          console.log(response);
-        }, (error) => {
-          console.log(error);
-        }
-    )
-  }
-
-
+export class AppComponent {
+  
 }

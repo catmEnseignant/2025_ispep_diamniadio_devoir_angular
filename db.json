@@ -1,0 +1,81 @@
+{
+  "eleves": [
+    {
+      "id": 1,
+      "prenom": "Fatou",
+      "nom": "Diop",
+      "telephone": "77889900",
+      "adresse": "Dakar",
+      "date_naissance": "2002-05-12"
+    },
+    {
+      "id": 2,
+      "prenom": "Moussa",
+      "nom": "Sarr",
+      "telephone": "77112233",
+      "adresse": "Pikine",
+      "date_naissance": "2001-09-20"
+    },
+    {
+      "id": 3,
+      "prenom": "Awa",
+      "nom": "Ndiaye",
+      "telephone": "76543210",
+      "adresse": "Guédiawaye",
+      "date_naissance": "2003-03-05"
+    },
+    {
+      "id": 4,
+      "prenom": "Ousmane",
+      "nom": "Ba",
+      "telephone": "70112233",
+      "adresse": "Thiaroye",
+      "date_naissance": "2000-08-30"
+    },
+    {
+      "id": 5,
+      "prenom": "Mame",
+      "nom": "Seck",
+      "telephone": "77445566",
+      "adresse": "Rufisque",
+      "date_naissance": "2004-12-15"
+    }
+  ],
+  "enseignants": [
+    {
+      "id": 1,
+      "prenom": "Abdoulaye",
+      "nom": "Fall",
+      "telephone": "77001122",
+      "adresse": "Dakar"
+    },
+    {
+      "id": 2,
+      "prenom": "Mariama",
+      "nom": "Sow",
+      "telephone": "77334455",
+      "adresse": "Ziguinchor"
+    },
+    {
+      "id": 3,
+      "prenom": "Cheikh",
+      "nom": "Mbaye",
+      "telephone": "77667788",
+      "adresse": "Saint-Louis"
+    },
+    {
+      "id": 4,
+      "prenom": "Khady",
+      "nom": "Gaye",
+      "telephone": "77990011",
+      "adresse": "Touba"
+    },
+    {
+      "id": 5,
+      "prenom": "Ibrahima",
+      "nom": "Lo",
+      "telephone": "77123456",
+      "adresse": "Kaolack"
+    }
+  ]
+}
