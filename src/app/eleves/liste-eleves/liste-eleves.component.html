@@ -1,0 +1,41 @@
+<!-- liste-eleves.component.html -->
+<div class="container mt-4">
+  <div class="row mb-3">
+    <div class="col"><h4>Liste des élèves</h4></div>
+    <div class="col text-center"><h5>Nombre d’élèves : {{ eleves.length }}</h5></div>
+    <div class="col text-end">
+      <button class="btn btn-primary" (click)="ajouter()">Ajouter un élève</button>
+    </div>
+  </div>
+
+  <table class="table table-striped" *ngIf="eleves.length > 0">
+    <thead>
+      <tr>
+        <th>Prénom</th>
+        <th>Nom</th>
+        <th>Adresse</th>
+        <th>Téléphone</th>
+        <th>Date de naissance</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let eleve of eleves">
+        <td>{{ eleve.prenom }}</td>
+        <td>{{ eleve.nom }}</td>
+        <td>{{ eleve.adresse }}</td>
+        <td>{{ eleve.telephone }}</td>
+        <td>{{ eleve.date_naissance }}</td>
+        <td>
+          <button class="btn btn-sm btn-warning me-1" (click)="editer(eleve)">
+            <i class="bi bi-pencil"></i>
+          </button>
+          <button class="btn btn-sm btn-danger" (click)="supprimer(eleve)">
+            <i class="bi bi-trash"></i>
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
