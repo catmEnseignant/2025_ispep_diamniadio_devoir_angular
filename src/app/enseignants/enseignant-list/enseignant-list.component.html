@@ -1,0 +1,32 @@
+<h2>Liste des enseignants</h2>
+<div style="display: flex; justify-content: space-between; align-items: center;">
+  <h3>Liste des enseignants</h3>
+  <h3>Nombre : {{ enseignants.length }}</h3>
+  <button (click)="add()">Ajouter</button>
+</div>
+
+<table border="1" width="100%" style="margin-top: 1rem;">
+  <thead>
+    <tr>
+      <th>Matricule</th>
+      <th>Prénom</th>
+      <th>Nom</th>
+      <th>Téléphone</th>
+      <th>Adresse</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let ens of enseignants">
+      <td>{{ ens.matricule }}</td>
+      <td>{{ ens.prenom }}</td>
+      <td>{{ ens.nom }}</td>
+      <td>{{ ens.telephone }}</td>
+      <td>{{ ens.adresse }}</td>
+      <td>
+        <button (click)="edit(ens.id)">✏️</button>
+        <button (click)="delete(ens.id)">🗑️</button>
+      </td>
+    </tr>
+  </tbody>
+</table>

@@ -1,0 +1,26 @@
+<h2 *ngIf="isEdit">Modifier un enseignant</h2>
+<h2 *ngIf="!isEdit">Ajouter un enseignant</h2>
+
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <div>
+    <label>Matricule :</label>
+    <input formControlName="matricule" />
+  </div>
+  <div>
+    <label>Prénom :</label>
+    <input formControlName="prenom" />
+  </div>
+  <div>
+    <label>Nom :</label>
+    <input formControlName="nom" />
+  </div>
+  <div>
+    <label>Téléphone :</label>
+    <input formControlName="telephone" />
+  </div>
+  <div>
+    <label>Adresse :</label>
+    <input formControlName="adresse" />
+  </div>
+  <button type="submit">{{ isEdit ? 'Modifier' : 'Ajouter' }}</button>
+</form>
