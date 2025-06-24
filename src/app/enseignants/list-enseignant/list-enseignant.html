@@ -1,0 +1,38 @@
+<div class="container-fluid mt-4">
+  <div class="card-header text-center bg-light py-2 shadow-sm rounded-2">
+    <div class="row">
+      <div class="col-4">
+        <h4 class="text-primary fw-bold">Liste des enseignants</h4>
+      </div>
+      <div class="col-4">
+        <h4 class="text-primary fw-bold">Nombre d’enseignants ({{ enseignants.length }})</h4>
+      </div>
+      <div class="col-4 text-end">
+        <a class="btn btn-primary" (click)="addEnseignant()"><b>Ajouter un enseignant</b></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="card-body container my-2">
+    <table class="table table-light table-hover table-sm">
+      <thead class="table-light">
+        <tr class="text-center">
+          <th>Matricule</th>
+          <th>Prénom</th>
+          <th>Nom</th>
+          <th>Téléphone</th>
+          <th>Adresse</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="text-center" *ngFor="let enseignant of enseignants">
+          <td>{{ enseignant.matricule }}</td>
+          <td>{{ enseignant.prenom }}</td>
+          <td>{{ enseignant.nom }}</td>
+          <td>{{ enseignant.telephone }}</td>
+          <td>{{ enseignant.adresse }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

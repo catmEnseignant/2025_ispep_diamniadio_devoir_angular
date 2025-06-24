@@ -1,0 +1,38 @@
+<div class="container my-3">
+    <div class="row text-center text-info">
+        <div class="col-12">
+            <h1 class="fw-bold">Ajouter un eleve</h1>
+        </div>
+    </div>
+    <form [formGroup]="classeform" (ngSubmit)="submitClasse()">
+    <div class="row">
+        <div class="col-md-6">
+            <label class="form-label text-primary fw-bold" for="numero_carte">Numero_carte</label>
+            <input class="form-control" type="text" formControlName="numero_carte" id="numero_carte" required autocomplete="off">
+        </div>
+        <div class="col-md-6">
+            <label class="form-label text-primary fw-bold" for="prenom">Prenom</label>
+            <input class="form-control" type="text" formControlName="prenom" id="prenom" required autocomplete="off">
+        </div>
+        <div class="col-md-6">
+            <label class="form-label text-primary fw-bold" for="nom">Nom</label>
+            <input class="form-control" type="text" formControlName="nom" id="nom" required autocomplete="off">
+        </div>
+        <div class="col-md-6">
+            <label class="form-label text-primary fw-bold" for="adresse">Adresse</label>
+            <input class="form-control" type="text" formControlName="adresse" id="adresse" required autocomplete="off">
+        </div>
+        <div class="col-md-6">
+            <label class="form-label text-primary fw-bold" for="telephone">Telephone</label>
+            <input class="form-control" type="text" formControlName="telephone" id="telephone" required autocomplete="off">
+        </div>
+        <div class="col-md-6">
+            <label class="form-label text-primary fw-bold" for="date_naissance">Date_naissance</label>
+            <input class="form-control" type="text" formControlName="date_naissance" id="date_naissance" required autocomplete="off">
+        </div>
+        <div class="col-md-12">
+            <button class="btn btn-info fw-bold w-100 mt-2" type="submit">Envoyer</button>
+        </div>
+    </div>
+    </form>
+</div>

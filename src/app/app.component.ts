@@ -1,29 +1,17 @@
-import {Component, OnInit} from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import {HttpClient} from "@angular/common/http";
+import { Component } from '@angular/core';
+import { RouterModule, RouterOutlet } from '@angular/router';
+import { CommonModule } from '@angular/common';
+import { Navbar } from './shared/navbar/navbar/navbar/navbar';
+import { Footer } from './footer/footer';
+
 
 @Component({
   selector: 'app-root',
-  imports: [],
+  imports: [RouterOutlet, RouterModule, CommonModule,Navbar,Footer],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
-export class AppComponent implements OnInit{
-  title = 'angular_project';
-
-  constructor( private httpClient: HttpClient) {
-
-  }
-
-  ngOnInit() {
-    this.httpClient.get("http://localhost:3000/eleves").subscribe(
-        (response) =>{
-          console.log(response);
-        }, (error) => {
-          console.log(error);
-        }
-    )
-  }
-
+export class AppComponent {
+  title = 'Nouveautés !';
 
 }
