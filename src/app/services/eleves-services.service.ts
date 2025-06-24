@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Eleve } from "../models/eleves";
+import {Eleve, Eleves} from "../models/eleves";
 
 @Injectable({
   providedIn: 'root'
@@ -19,11 +19,11 @@ export class ElevesServicesService {
     return this.http.get<Eleve>(`${this.apiUrl}/${id}`);
   }
 
-  addEleve(eleve: Eleve): Observable<Eleve> {
+  addEleve(eleve: Eleves): Observable<Eleve> {
     return this.http.post<Eleve>(this.apiUrl, eleve);
   }
 
-  updateEleve(id: number, eleve: Eleve): Observable<Eleve> {
+  updateEleve(id: number, eleve: Eleves): Observable<Eleve> {
     return this.http.put<Eleve>(`${this.apiUrl}/${id}`, eleve);
   }
 

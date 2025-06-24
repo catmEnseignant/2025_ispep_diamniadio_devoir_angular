@@ -1,16 +1,18 @@
 export class Enseignant {
     matricule: string;
     prenom: string;
-    nome: string;
+    nom: string;
     telephone: string;
-    adress: string;
+    adresse: string;
+    id?: number;
 
-    constructor(matricule: string, prenom: string, nome: string, telephone: string, adress: string) {
+    constructor(id:number,matricule: string, prenom: string, nom: string, telephone: string, adresse: string) {
         this.matricule = matricule;
         this.prenom = prenom;
-        this.nome = nome;
+        this.nom = nom;
         this.telephone = telephone;
-        this.adress = adress;
+        this.adresse = adresse;
+        this.id = id;
     }
 }
 

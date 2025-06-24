@@ -11,7 +11,7 @@
                     <div class="card-body">
                         <h5 class="card-title">Gestion des Élèves</h5>
                         <p class="card-text">Ajoutez, modifiez et gérez les informations des élèves.</p>
-                        <a routerLink="/eleves" class="btn btn-primary">Voir les élèves</a>
+                        <a class="btn btn-primary" (click)="navigateTo('/eleves')" style="cursor: pointer;">Voir les élèves</a>
                     </div>
                 </div>
             </div>
@@ -20,7 +20,8 @@
                     <div class="card-body">
                         <h5 class="card-title">Gestion des Enseignants</h5>
                         <p class="card-text">Ajoutez, modifiez et gérez les informations des enseignants.</p>
-                        <a routerLink="/enseignants" class="btn btn-success">Voir les enseignants</a>
+                        <a class="btn btn-success" (click)="navigateTo('/enseignants')" style="cursor: pointer;">Voir les enseignants</a>
+
                     </div>
                 </div>
             </div>

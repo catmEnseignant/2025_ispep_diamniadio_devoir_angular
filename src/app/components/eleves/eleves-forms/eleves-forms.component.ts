@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, ReactiveFormsModule, Validators} from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ElevesServicesService } from '../../../services/eleves-services.service';
-import { Eleve } from '../../../models/eleves';
+import {Eleve, Eleves} from '../../../models/eleves';
 
 @Component({
   selector: 'app-eleves-forms',
@@ -29,7 +29,6 @@ export class ElevesFormsComponent implements OnInit {
       nom: ['', Validators.required],
       telephone: ['', Validators.required],
       adresse: ['', Validators.required],
-      date_naissance: ['', Validators.required]
     });
   }
 
@@ -56,7 +55,7 @@ export class ElevesFormsComponent implements OnInit {
 
   onSubmit() {
     if (this.eleveForm.valid) {
-      const eleveData: Eleve = this.eleveForm.value;
+      const eleveData: Eleves = this.eleveForm.value;
 
       if (this.isEditMode && this.eleveId) {
         this.eleveService.updateEleve(this.eleveId, eleveData).subscribe(

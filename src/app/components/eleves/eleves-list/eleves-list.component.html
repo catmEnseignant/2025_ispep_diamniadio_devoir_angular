@@ -24,7 +24,6 @@
                 <th>Nom</th>
                 <th>Téléphone</th>
                 <th>Adresse</th>
-                <th>Date Naissance</th>
                 <th>Actions</th>
             </tr>
             </thead>
@@ -37,10 +36,10 @@
                 <td>{{eleve.adresse}}</td>
                 <td>
                     <button class="btn btn-sm btn-warning me-2" (click)="modifierEleve(eleve.id!)">
-                        <i class="fas fa-pencil-alt"></i>
+                        <i class="fas fa-pencil-alt">modifier</i>
                     </button>
                     <button class="btn btn-sm btn-danger" (click)="supprimerEleve(eleve.id!, eleve.prenom + ' ' + eleve.nom)">
-                        <i class="fas fa-trash"></i>
+                        <i class="fas fa-trash">supprimer</i>
                     </button>
                 </td>
             </tr>

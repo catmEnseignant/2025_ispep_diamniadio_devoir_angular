@@ -1,23 +1,22 @@
 {
   "eleves": [
     {
-      "id": 1,
-      "numero_carte": "ETU001",
-      "prenom": "Fatou",
-      "nom": "Diop",
+      "numero_carte": "ETU0011",
+      "prenom": "Kevin",
+      "nom": "Durant",
       "telephone": "77123456",
       "adresse": "Dakar, Plateau",
-      "date_naissance": "2005-03-15"
+      "id": "1"
     }
   ],
   "enseignants": [
     {
-      "id": 1,
       "matricule": "ENS001",
-      "prenom": "Mamadou",
+      "prenom": "Mamadouu",
       "nom": "Fall",
       "telephone": "77654321",
-      "adresse": "Dakar, Almadies"
+      "adresse": "Dakar, Almadies",
+      "id": "1"
     }
   ]
 }

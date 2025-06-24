@@ -1,0 +1,50 @@
+<div class="container mt-4">
+    <!-- En-tête -->
+    <div class="row mb-4">
+        <div class="col-md-4">
+            <h2>Liste des enseignants</h2>
+        </div>
+        <div class="col-md-4 text-center">
+            <h4 class="badge bg-info fs-6">Nombre d'enseignants: {{enseignants.length}}</h4>
+        </div>
+        <div class="col-md-4 text-end">
+            <button class="btn btn-primary" (click)="ajouterEnseignant()">
+                <i class="fas fa-plus"></i> Ajouter un enseignants
+            </button>
+        </div>
+    </div>
+
+    <!-- Tableau -->
+    <div class="table-responsive">
+        <table class="table table-striped table-hover">
+            <thead class="table-dark">
+            <tr>
+                <th>N° Carte</th>
+                <th>Prénom</th>
+                <th>Nom</th>
+                <th>Téléphone</th>
+                <th>Adresse</th>
+                <th>Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let enseignant of enseignants">
+                <td>{{enseignant.matricule}}</td>
+                <td>{{enseignant.prenom}}</td>
+                <td>{{enseignant.nom}}</td>
+                <td>{{enseignant.telephone}}</td>
+                <td>{{enseignant.adresse}}</td>
+                <td>
+                    <button class="btn btn-sm btn-warning me-2" (click)="modifierEnseignant(enseignant.id!)">
+                        <i class="fas fa-pencil-alt">modifier</i>
+                    </button>
+                    <button class="btn btn-sm btn-danger" (click)="supprimerEnseignant(enseignant.id!, enseignant.prenom + ' ' + enseignant.nom)">
+                        <i class="fas fa-trash">supprimer</i>
+                    </button>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+</div>

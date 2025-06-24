@@ -3,10 +3,13 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ElevesServicesService } from '../../../services/eleves-services.service';
 import { Eleve } from '../../../models/eleves';
+import {NgForOf} from "@angular/common";
 
 @Component({
   selector: 'app-eleves-list',
-  imports: [],
+  imports: [
+    NgForOf
+  ],
   templateUrl: './eleves-list.component.html',
   styleUrl: './eleves-list.component.css'
 })
