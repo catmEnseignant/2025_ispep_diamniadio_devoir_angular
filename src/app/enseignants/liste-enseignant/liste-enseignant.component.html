@@ -1,1 +1,59 @@
-<p>liste-enseignant works!</p>
+<div class="card container-fluid">
+    <div class="card-header">
+        <div class="row">
+            <div class="col-4">
+                <h4>Liste des enseignant</h4>
+            </div>
+
+            <div class="col-4">
+                <h4>Nombre de enseignant{{enseignants?.length}}</h4>
+            </div>
+
+            <div class="col-4">
+              <button class="btn btn-primary" (click)="addEnseignant()">Ajouter une  enseignant</button>
+            </div>
+
+        </div>
+
+    </div>
+    <div class="card-body">
+
+    </div>
+
+      <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">matricule</th>
+                
+                <th scope="col">prenom</th>
+                <th scope="col">Nom</th>
+                <th scope="col">telephone</th>
+                <th scope="col">Adresse</th>
+                <th scope="col">Nombre d'éléve</th>
+              </tr>
+        </thead>
+        <tbody >
+          <tr *ngFor= "let enseignant of enseignants"> 
+            <th scope="row"> {{enseignant.nom}}</th>
+            <th>{{enseignant.nombres_eleve}}</th>
+            <th> {{enseignant.serie}}</th>
+            <th> {{enseignant.niveau}}</th>
+            <td>
+              <button class="btn btn-warning btn-sm me-2" (click)="editEnseignant(enseignant)">
+                <i class="bi bi-pencil-square"></i>
+              </button>
+              <button class="btn btn-danger btn-sm" (click)="deleteEnseignant(enseignant)">
+              
+                <i class="bi bi-trash"></i>
+              </button>
+            </td>
+           
+          </tr>
+         
+        </tbody>
+      </table>
+   
+</div>
+
+
+

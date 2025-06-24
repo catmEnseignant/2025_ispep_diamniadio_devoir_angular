@@ -1,1 +1,46 @@
-<p>form-enseignant works!</p>
+<div class="card container-fluid">
+    <div class="card-header">
+        <div class="row">
+            <div class="col-4">
+                <h4>Formulaire Enseignat</h4>
+            </div>
+            <div class="col-4">
+                <h4>Nombre de Enseignat</h4>
+            </div>
+        </div>
+    </div>
+    <div class="card-body">
+        <div class="container">
+            
+            <form [formGroup]="enseignantform" (ngSubmit)="submitEnseignant()">
+                <div class="row">
+                    <div class="col-6">
+                        <label for="nom" class="form-label">NOM</label>
+                        <input type="nom" class="form-control" formControlName="nom" id="nom">
+                    </div>
+                    <div class="col-6">
+                        <label for="niveau" class="form-label">Niveau</label>
+                        <input type="niveau" class="form-control"  formControlName="niveau" id="niveau">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        <label for="serie" class="form-label">Série</label>
+                        <input type="serie" class="form-control" formControlName="serie" id="serie">
+                    </div>
+                    <div class="col-6">
+                        <label for="nombres_eleve"class="form-label">Nombres d'élève</label>
+                        <input type="nombres_eleve" class="form-control" formControlName="nombres_eleve" id="nombres_eleve">
+                    </div>
+                </div>
+                <div class="row">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>
+
+
+
