@@ -1,0 +1,42 @@
+<form [formGroup]="eleveForm" (ngSubmit)="onSubmit()">
+
+    <div>
+      <label>Nom:</label>
+      <input formControlName="nom" />
+      <div *ngIf="eleveForm.get('nom')?.invalid && eleveForm.get('nom')?.touched">
+        
+      </div>
+    </div>
+  
+    <div>
+      <label>Prénom:</label>
+      <input formControlName="prenom" />
+      <div *ngIf="eleveForm.get('prenom')?.invalid && eleveForm.get('prenom')?.touched">
+      </div>
+    </div>
+  
+    <div>
+      <label>Téléphone:</label>
+      <input formControlName="telephone" />
+      <div *ngIf="eleveForm.get('telephone')?.invalid && eleveForm.get('telephone')?.touched">
+      </div>
+    </div>
+  
+    <div>
+      <label>Adresse:</label>
+      <input formControlName="adresse" />
+      <div *ngIf="eleveForm.get('adresse')?.invalid && eleveForm.get('adresse')?.touched">
+      </div>
+    </div>
+  
+    <div>
+      <label>Date de naissance:</label>
+      <input type="date" formControlName="dateNaissance" />
+      <div *ngIf="eleveForm.get('dateNaissance')?.invalid && eleveForm.get('dateNaissance')?.touched">
+      </div>
+    </div>
+  
+    <button type="submit">{{ editMode ? 'Modifier' : 'Ajouter' }}</button>
+    <button type="button" (click)="onCancel()">Submit</button>
+  </form>
+  

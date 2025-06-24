@@ -1,0 +1,60 @@
+<p>form-enseignant works!</p>
+<div class="card container mt-4">
+    <div class="card-header">
+      <h4>{{ editMode ? 'Modifier un enseignant' : 'Ajouter un enseignant' }}</h4>
+    </div>
+    <div class="card-body">
+      <form [formGroup]="enseignantForm" (ngSubmit)="submitEnseignant()">
+  
+        <div class="mb-3">
+          <label for="nom" class="form-label">Nom</label>
+          <input id="nom" class="form-control" formControlName="nom" />
+          <div *ngIf="enseignantForm.get('nom')?.touched && enseignantForm.get('nom')?.invalid" class="text-danger">
+            Le nom est requis.
+          </div>
+        </div>
+  
+        <div class="mb-3">
+          <label for="prenom" class="form-label">Prénom</label>
+          <input id="prenom" class="form-control" formControlName="prenom" />
+          <div *ngIf="enseignantForm.get('prenom')?.touched && enseignantForm.get('prenom')?.invalid" class="text-danger">
+            Le prénom est requis.
+          </div>
+        </div>
+  
+        <div class="mb-3">
+          <label for="matiere" class="form-label">Matière</label>
+          <input id="matiere" class="form-control" formControlName="matiere" />
+          <div *ngIf="enseignantForm.get('matiere')?.touched && enseignantForm.get('matiere')?.invalid" class="text-danger">
+            La matière est requise.
+          </div>
+        </div>
+  
+        <div class="mb-3">
+          <label for="matricule" class="form-label">Matricule</label>
+          <input id="matricule" class="form-control" formControlName="matricule" />
+          <div *ngIf="enseignantForm.get('matricule')?.touched && enseignantForm.get('matricule')?.invalid" class="text-danger">
+            Le matricule est requis.
+          </div>
+        </div>
+  
+        <div class="mb-3">
+          <label for="telephone" class="form-label">Téléphone</label>
+          <input id="telephone" class="form-control" formControlName="telephone" />
+          <div *ngIf="enseignantForm.get('telephone')?.touched && enseignantForm.get('telephone')?.invalid" class="text-danger">
+            Téléphone requis (8 à 15 chiffres).
+          </div>
+        </div>
+  
+        <div class="mb-3">
+          <label for="adresse" class="form-label">Adresse</label>
+          <input id="adresse" class="form-control" formControlName="adresse" />
+        </div>
+  
+        <div class="row">
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  

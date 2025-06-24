@@ -1,0 +1,41 @@
+<p>list-eleve works!</p>
+<div class="container mt-4">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+      <h3>Liste des élèves</h3>
+      <span class="badge bg-primary">Nombre : {{ eleves.length }}</span>
+      <button class="btn btn-success" (click)="goToAjout()">Ajouter un élève</button>
+    </div>
+  
+    <table class="table table-bordered table-striped">
+      <thead class="table-dark">
+        <tr>
+          <th>#</th>
+          <th>Nom</th>
+          <th>Prénom</th>
+          <th>Téléphone</th>
+          <th>Adresse</th>
+          <th>Date de naissance</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let eleve of eleves; index as i">
+          <td>{{ i + 1 }}</td>
+          <td>{{ eleve.nom }}</td>
+          <td>{{ eleve.prenom }}</td>
+          <td>{{ eleve.telephone }}</td>
+          <td>{{ eleve.adresse }}</td>
+          <td>{{ eleve.date_naissance }}</td>
+          <td>
+            <button class="btn btn-sm btn-warning me-1" (click)="editEleve(eleve.id!)">
+              <i class="bi bi-pencil"></i>
+            </button>
+            <button class="btn btn-sm btn-danger" (click)="deleteEleve(eleve.id!)">
+              <i class="bi bi-trash"></i>
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
