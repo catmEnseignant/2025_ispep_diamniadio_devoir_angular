@@ -1,0 +1,132 @@
+{
+  "enseignants": [
+    {
+      "prenom": "Amadou",
+      "nom": "Seck",
+      "email": "amadou.seck@ispep.sngggg",
+      "telephone": "76 987 65 43",
+      "matiere": "Informatique",
+      "dateNaissance": "1980-07-22",
+      "id": 2
+    },
+    {
+      "prenom": "TYUIOL",
+      "nom": "fghjkl",
+      "email": "y@gmail.com",
+      "telephone": "2345678",
+      "matiere": "Physique",
+      "dateNaissance": "2025-06-19",
+      "id": 3
+    },
+    {
+      "prenom": "yy",
+      "nom": "GHj",
+      "email": "hh@gmail.com",
+      "telephone": "12345",
+      "matiere": "Physique",
+      "dateNaissance": "2025-06-04",
+      "id": 4
+    },
+    {
+      "prenom": "fghjk",
+      "nom": "fghjk",
+      "email": "fyuiol@gmail.com",
+      "telephone": "1234567",
+      "matiere": "Français",
+      "dateNaissance": "2025-06-26",
+      "id": 5
+    },
+    {
+      "prenom": "Oumar Diallo",
+      "nom": "nn",
+      "email": "fg@gmail.com",
+      "telephone": "123456",
+      "matiere": "Physique",
+      "dateNaissance": "2025-06-24",
+      "id": 6
+    },
+    {
+      "prenom": "fghjk",
+      "nom": "ghjkl",
+      "email": "yu@gmail.com",
+      "telephone": "1234567",
+      "matiere": "Mathématiques",
+      "dateNaissance": "2025-06-24",
+      "id": 7
+    },
+    {
+      "prenom": "yui",
+      "nom": "tyuhi",
+      "email": "hhh@gmail.com",
+      "telephone": "12345",
+      "matiere": "Informatique",
+      "dateNaissance": "2025-06-11",
+      "id": 8
+    },
+    {
+      "prenom": "tfyghujkluuuuuu",
+      "nom": "hyeyd",
+      "email": "hhhh@gmail.com",
+      "telephone": "123456",
+      "matiere": "Anglais",
+      "dateNaissance": "2025-06-06",
+      "id": 9
+    }
+  ],
+  "eleves": [
+    {
+      "id": 1,
+      "prenom": "Fatou",
+      "nom": "Ba",
+      "email": "fatou.ba@student.ispep.sn",
+      "telephone": "77 234 56 78",
+      "classe": "L3 Informatique",
+      "dateNaissance": "2002-09-10"
+    },
+    {
+      "id": 2,
+      "prenom": "Moussa",
+      "nom": "Ndiaye",
+      "email": "moussa.ndiaye@student.ispep.sn",
+      "telephone": "76 876 54 32",
+      "classe": "L2 Gestion",
+      "dateNaissance": "2003-01-18"
+    },
+    {
+      "prenom": "fgyhujikl",
+      "nom": "dfghjk",
+      "email": "rtyuio@gmail.com",
+      "telephone": "123456",
+      "classe": "L2 Informatique",
+      "dateNaissance": "2025-06-05",
+      "id": 3
+    },
+    {
+      "prenom": "ghj",
+      "nom": "hghh",
+      "email": "ghjk@gmail.com",
+      "telephone": "3456",
+      "classe": "L3 Informatique",
+      "dateNaissance": "2025-06-13",
+      "id": 4
+    },
+    {
+      "prenom": "dfghjk",
+      "nom": "gyuio",
+      "email": "g@gmail.com",
+      "telephone": "234567",
+      "classe": "L1 Informatique",
+      "dateNaissance": "2025-06-24",
+      "id": 5
+    },
+    {
+      "prenom": "ss",
+      "nom": "dgr",
+      "email": "ss@gmail.com",
+      "telephone": "123456",
+      "classe": "L1 Informatique",
+      "dateNaissance": "2025-06-24",
+      "id": 6
+    }
+  ]
+}
