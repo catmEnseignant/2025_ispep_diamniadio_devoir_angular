@@ -1,10 +1,12 @@
 import {Component, OnInit} from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import {HttpClient} from "@angular/common/http";
+import { NavBarComponent } from "./pages/appBar/nav-bar/nav-bar.component";
+import { FooterComponent } from "./pages/footerPage/footer/footer.component";
 
 @Component({
   selector: 'app-root',
-  imports: [],
+  imports: [RouterOutlet, NavBarComponent, FooterComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

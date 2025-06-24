@@ -1,0 +1,32 @@
+<footer class="bg-dark text-white text-center text-lg-start mt-5">
+  <div class="container p-4">
+    <div class="row">
+      <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
+        <h5 class="text-uppercase fw-bold">À propos</h5>
+        <p class="fw-bold fst-italic text-secondary">
+          Ceci est une application de gestion scolaire développée pour faciliter la gestion des élèves et enseignants.
+        </p>
+      </div>
+
+      <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+        <h5 class="text-uppercase fw-bold">Liens utiles</h5>
+        <ul class="list-unstyled mb-0">
+          <li><a [routerLink]="['eleves/list-eleve']" class="text-decoration-none fw-bold text-secondary">List élèves</a></li>
+          <li><a [routerLink]="['enseignants/list-enseignant']" class="text-decoration-none fw-bold text-secondary">List enseignants</a></li>
+        </ul>
+      </div>
+
+      <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+        <h5 class="text-uppercase fw-bold">Contact</h5>
+        <ul class="list-unstyled">
+          <li class="text-secondary"><i class="bi bi-envelope text-secondary"></i> email<span>&#64;</span>example.com</li>
+          <li class="text-secondary"><i class="bi bi-telephone text-secondary"></i> +33 6 00 00 00 00</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="text-center p-3 bg-secondary fw-bold fst-italic">
+    © 2025 MonApplicationScolaire
+  </div>
+</footer>
