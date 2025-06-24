@@ -1,0 +1,50 @@
+<div class="card container-fluid">
+    <div class="card-header">
+        <div class="row">
+            <div class="col-4">
+                <h4>Formulaire d'enseignants</h4>
+            </div>
+            <div class="col-4">
+                <h4>Nombre d'enseignants</h4>
+            </div>
+        </div>
+    </div>
+    <div class="card-body">
+        <div class="container">
+            <form [formGroup]="enseignantsform" (ngSubmit)="submitEnseignants()">
+                <div class="row">
+                    <div class="col-6">
+                        <label for="numero_carte" class="form-label">Numero_carte</label>
+                        <input type="numero_carte" class="form-control" formControlName="numero_carte" id="numero_carte">
+                    </div>
+                    <div class="col-6">
+                        <label for=" prenom" class="form-label"> Prenom</label>
+                        <input type=" prenom" class="form-control"  formControlName=" prenom" id=" prenom">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        <label for="nom" class="form-label">Nom</label>
+                        <input type="nom" class="form-control" formControlName="nom" id="nom">
+                    </div>
+                    <div class="col-6">
+                        <label for=" adresse"class="form-label"> Adresse</label>
+                        <input type=" adresse" class="form-control" formControlName=" adresse" id=" adresse">
+                    </div>
+                    <div class="col-6">
+                        <label for="  telephone"class="form-label">  Telephone</label>
+                        <input type="  telephone" class="form-control" formControlName="  telephone" id="  telephone">
+                    </div>
+                    <div class="col-6">
+                        <label for=" date_naissance"class="form-label"> Date_naissance</label>
+                        <input type=" date_naissance" class="form-control" formControlName=" date_naissance" id=" date_naissance">
+                    </div>
+                </div>
+                <div class="row">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>

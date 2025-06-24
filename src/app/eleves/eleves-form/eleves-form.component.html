@@ -1,0 +1,30 @@
+<div class="container mt-4">
+  <h3>Formulaire Élève</h3>
+  <form [formGroup]="elevesform" (ngSubmit)="submitEleves()">
+    <div class="mb-3">
+      <label>Numéro carte</label>
+      <input type="text" class="form-control" formControlName="numero_carte">
+    </div>
+    <div class="mb-3">
+      <label>Prénom</label>
+      <input type="text" class="form-control" formControlName="prenom">
+    </div>
+    <div class="mb-3">
+      <label>Nom</label>
+      <input type="text" class="form-control" formControlName="nom">
+    </div>
+    <div class="mb-3">
+      <label>Adresse</label>
+      <input type="text" class="form-control" formControlName="adresse">
+    </div>
+    <div class="mb-3">
+      <label>Téléphone</label>
+      <input type="text" class="form-control" formControlName="telephone">
+    </div>
+    <div class="mb-3">
+      <label>Date de naissance</label>
+      <input type="date" class="form-control" formControlName="date_naissance">
+    </div>
+    <button type="submit" class="btn btn-success">Enregistrer</button>
+  </form>
+</div>
