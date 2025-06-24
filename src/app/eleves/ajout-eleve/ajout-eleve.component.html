@@ -1,0 +1,46 @@
+
+<div class="-card container-fluid" style="margin-top: -5.9%; background-color:white;">
+
+    <div class="-card-hearder">
+
+        <div>
+            <div class="col-4" >
+                <h4>Ajouter un eleve</h4>
+         </div>
+
+<div class="card-body">
+    <form [formGroup]="eleveform" (ngSubmit)="storeEleve()">
+        <div class="mb-3" id="valor">
+
+          <label for="prenom" class="form-label">Prenom</label>
+          <input type="text" class="form-control" formControlName="prenom"> <br><br>
+       
+          <label for="nom" class="form-label">Nom</label>
+          <input type="text" class="form-control" formControlName="nom"> <br><br>
+          
+          <label for="date_naissance" class="form-label">Date de naissance</label>
+          <input type="date" class="form-control" formControlName="date_naissance"><br><br>
+       
+        </div>
+        
+        <div class="mb-3" id="cadre">
+
+          
+          <label for="numero_carte" class="form-label">Numero carte</label>
+          <input type="text" class="form-control" formControlName="numero_carte"> <br><br>
+
+           <label for="adresse" class="form-label">Adresse</label>
+          <input type="text" class="form-control" formControlName="adresse"><br><br>
+       
+          
+          <label for="telephone" class="form-label">Telephone</label>
+          <input type="text" class="form-control" formControlName="telephone"> <br><br>
+
+        </div>
+        
+    
+        <button type="submit" class="btn btn-primary" value="Enregistrer">Enregister</button>
+    </form>
+  </div>
+</div>
+</div>

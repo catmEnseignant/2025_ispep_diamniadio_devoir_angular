@@ -7,7 +7,8 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "serve:ssr:angular_project": "node dist/angular_project/server/server.mjs",
+    "serve:ssr:penda_dia": "node dist/penda_dia/server/server.mjs",
+    "json-server": "json-server --watch backend/db.json --port 3000",
     "api": "json-server --watch backend/db.json --port 3000"
   },
   "private": true,
@@ -24,7 +25,6 @@
     "@angular/ssr": "^19.1.8",
     "bootstrap": "^5.3.7",
     "express": "^4.18.2",
-    "json-server": "^1.0.0-beta.3",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.15.0"
@@ -37,6 +37,7 @@
     "@types/jasmine": "~5.1.0",
     "@types/node": "^18.18.0",
     "jasmine-core": "~5.5.0",
+    "json-server": "^1.0.0-beta.3",
     "karma": "~6.4.0",
     "karma-chrome-launcher": "~3.2.0",
     "karma-coverage": "~2.2.0",
