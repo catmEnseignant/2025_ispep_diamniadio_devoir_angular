@@ -1,22 +1,19 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Router, RouterModule } from '@angular/router';
-import { EnseignantsService } from '../../services/enseignants.service';
+import { EnseignantsService, Enseignant } from '../../services/enseignants.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-liste-enseignants',
   standalone: true,
-  imports: [CommonModule,RouterModule],
+  imports: [CommonModule],
   templateUrl: './liste-enseignants.component.html',
   styleUrls: ['./liste-enseignants.component.css']
 })
 export class ListeEnseignantsComponent implements OnInit {
-  enseignants: any[] = [];
+  enseignants: Enseignant[] = [];
 
-  constructor(
-    private enseignantsService: EnseignantsService,
-    private router: Router
-  ) {}
+  constructor(private enseignantsService: EnseignantsService, private router: Router) {}
 
   ngOnInit(): void {
     this.loadEnseignants();
@@ -24,28 +21,24 @@ export class ListeEnseignantsComponent implements OnInit {
 
   loadEnseignants(): void {
     this.enseignantsService.getEnseignants().subscribe({
-      next: (data) => (this.enseignants = data),
-      error: (err) => console.error('Erreur lors du chargement des enseignants', err)
+      next: data => this.enseignants = data,
+      error: err => console.error(err)
     });
   }
 
   ajouter(): void {
-    this.router.navigate(['/enseignants/form']);
+  this.router.navigate(['/form-enseignant']);
+}
+
+
+  editer(enseignant: Enseignant): void {
+    this.router.navigate(['/form-enseignant', enseignant.id]);
   }
 
-  editer(enseignant: any): void {
-    localStorage.setItem('editEnseignant', JSON.stringify(enseignant));
-    this.router.navigate(['/enseignants/form']);
-  }
-
-  supprimer(enseignant: any): void {
+  supprimer(enseignant: Enseignant): void {
     if (confirm('Voulez-vous vraiment supprimer cet enseignant ?')) {
-      this.enseignantsService.deleteEnseignant(enseignant.id).subscribe({
-        next: () => {
-          // Supprimer localement sans recharger la page
-          this.enseignants = this.enseignants.filter(e => e.id !== enseignant.id);
-        },
-        error: (err) => console.error('Erreur lors de la suppression', err)
+      this.enseignantsService.deleteEnseignant(enseignant.id!).subscribe(() => {
+        this.loadEnseignants();
       });
     }
   }

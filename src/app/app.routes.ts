@@ -7,8 +7,15 @@ import { FormEnseignantComponent } from './enseignants/form-enseignant/form-ense
 
 export const routes: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'eleves/liste-eleves', component: ListeElevesComponent },
-  { path: 'eleves/form-eleve', component: FormEleveComponent },
-  { path: 'enseignants/liste-enseignants', component: ListeEnseignantsComponent },
-  { path: 'enseignants/form-enseignant', component: FormEnseignantComponent },
+
+  // Routes Élèves
+  { path: 'liste-eleves', component: ListeElevesComponent },
+  { path: 'form-eleve', component: FormEleveComponent },
+
+  // Routes Enseignants
+  { path: 'liste-enseignants', component: ListeEnseignantsComponent },
+  { path: 'form-enseignant', component: FormEnseignantComponent },
+
+  // Redirection inconnue
+  { path: '**', redirectTo: '', pathMatch: 'full' }
 ];
