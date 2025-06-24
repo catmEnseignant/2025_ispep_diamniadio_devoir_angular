@@ -1,29 +1,16 @@
-import {Component, OnInit} from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import {HttpClient} from "@angular/common/http";
+import { Component } from '@angular/core';
+import { RouterModule, RouterOutlet } from '@angular/router';
+import { EleveComponent } from './eleve/eleve.component';
+import { EnseignantsComponent } from './enseignants/enseignants.component'; // remplace MatieresComponent par EnseignantsComponent
+import { NavbarComponent } from './shared/navbar/navbar.component';
+import { FooterComponent } from './footer/footer.component';
 
 @Component({
   selector: 'app-root',
-  imports: [],
+  imports: [RouterModule, RouterOutlet, NavbarComponent, FooterComponent],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrls: ['./app.component.css']  // corrigé styleUrl → styleUrls
 })
-export class AppComponent implements OnInit{
-  title = 'angular_project';
-
-  constructor( private httpClient: HttpClient) {
-
-  }
-
-  ngOnInit() {
-    this.httpClient.get("http://localhost:3000/eleves").subscribe(
-        (response) =>{
-          console.log(response);
-        }, (error) => {
-          console.log(error);
-        }
-    )
-  }
-
-
+export class AppComponent {
+  title = 'alette-ndongo';
 }

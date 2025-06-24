@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "angular_project": {
+    "diouma-sow": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/angular_project",
+            "outputPath": "dist/diouma-sow",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -27,15 +27,10 @@
               }
             ],
             "styles": [
-              "src/styles.css",
-              "node_modules/bootstrap/dist/css/bootstrap.css"
+              "src/styles.css"
+              
             ],
-            "scripts": [],
-            "server": "src/main.server.ts",
-            "outputMode": "server",
-            "ssr": {
-              "entry": "src/server.ts"
-            }
+            "scripts": []
           },
           "configurations": {
             "production": {
@@ -65,10 +60,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "angular_project:build:production"
+              "buildTarget": "diouma-sow:build:production"
             },
             "development": {
-              "buildTarget": "angular_project:build:development"
+              "buildTarget": "diouma-sow:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -98,8 +93,5 @@
         }
       }
     }
-  },
-  "cli": {
-    "analytics": "5b233bfc-7041-493e-9a7c-627934a20185"
   }
 }

@@ -1,0 +1,80 @@
+{
+  "eleves": [
+    {
+      "id": "089e",
+      "numero_carte": "089e",
+      "prenom": "Inconnu",
+      "nom": "bdf",
+      "adresse": "Inconnu",
+      "telephone": "Inconnu",
+      "date_naissance": "2005-01-01"
+    },
+    {
+      "id": "e040",
+      "numero_carte": "e040",
+      "prenom": "Alette",
+      "nom": "Alette",
+      "adresse": "Inconnu",
+      "telephone": "Inconnu",
+      "date_naissance": "2005-01-01"
+    },
+    {
+      "id": "8ed7",
+      "numero_carte": "2",
+      "prenom": "alette",
+      "nom": "fe",
+      "adresse": "s;s",
+      "telephone": "23",
+      "date_naissance": "2025-06-26"
+    }
+  ],
+  "enseignants": [
+    {
+      "id": "a002",
+      "matricule": "EN002",
+      "prenom": "Fatou",
+      "nom": "Diop",
+      "telephone": "770000002",
+      "adresse": "Thiès"
+    },
+    {
+      "id": "a003",
+      "matricule": "EN003",
+      "prenom": "Moussa",
+      "nom": "Sarr",
+      "telephone": "770000003",
+      "adresse": "Saint-Louis"
+    },
+    {
+      "matricule": "qw",
+      "prenom": "sass",
+      "nom": "pene",
+      "adresse": "dakar",
+      "telephone": "1356",
+      "id": "db1d"
+    }
+  ],
+  "matieres": [
+    {
+      "nom": "math",
+      "description": "unified",
+      "coefficient": 6,
+      "nombre_de_jours": "3 jours",
+      "id": "5805"
+    },
+    {
+      "nom": "math",
+      "description": "unified",
+      "coefficient": 6,
+      "nombre_de_jours": "3 jours",
+      "id": "096a"
+    },
+    {
+      "nom": "math",
+      "description": "unified",
+      "coefficient": 8,
+      "nombre_de_jours": "6 jours",
+      "id": "4ec9"
+    }
+  ]
+}
