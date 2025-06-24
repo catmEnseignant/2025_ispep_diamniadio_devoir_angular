@@ -1,0 +1,31 @@
+{
+  "eleves": [
+    {
+      "id": "2",
+      "numero_carte": "E202502",
+      "prenom": "Moussa",
+      "nom": "Diop",
+      "adresse": "Parcelle",
+      "telephone": "781112233",
+      "date_naissance": "2006-03-20"
+    }
+  ],
+  "enseignants": [
+    {
+      "id": "1",
+      "matricule": "ENS2025A",
+      "prenom": "Fatou",
+      "nom": "Ndoye",
+      "telephone": "771234000",
+      "adresse": "Pikine"
+    },
+    {
+      "id": "2",
+      "matricule": "ENS2025B",
+      "prenom": "Ibrahima",
+      "nom": "Sow",
+      "telephone": "770987654",
+      "adresse": "Guédiawaye"
+    }
+  ]
+}

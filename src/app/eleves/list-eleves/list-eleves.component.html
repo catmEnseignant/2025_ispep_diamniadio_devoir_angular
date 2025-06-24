@@ -1,0 +1,34 @@
+<div class="d-flex justify-content-between align-items-center mb-3">
+  <h3>Liste des élèves ({{ eleves.length }})</h3>
+  <button class="btn btn-primary" routerLink="ajouter">
+    <i class="bi bi-plus-circle"></i> Ajouter un élève
+  </button>
+</div>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>N° carte</th><th>Prénom</th><th>Nom</th>
+      <th>Adresse</th><th>Téléphone</th><th>Naissance</th><th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let e of eleves">
+      <td>{{ e.numero_carte }}</td>
+      <td>{{ e.prenom }}</td>
+      <td>{{ e.nom }}</td>
+      <td>{{ e.adresse }}</td>
+      <td>{{ e.telephone }}</td>
+      <td>{{ e.date_naissance | date:'yyyy-MM-dd' }}</td>
+      <td>
+        <button class="btn btn-sm btn-secondary me-1" (click)="edit(e)">
+          <i class="bi bi-pencil"></i>
+        </button>
+        <button class="btn btn-sm btn-danger" (click)="delete(e)">
+          <i class="bi bi-trash"></i>
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
