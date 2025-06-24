@@ -1,0 +1,42 @@
+<div class="card container-fluid">
+    <div class="card-header">
+        <div class="row">
+            <div class="col-4">
+                <h4>Formulaire Eleves👧👩‍🦲</h4>
+            </div>
+            <div class="col-4">
+                <h4>Nombre de Eleves👧👩‍🦲</h4>
+            </div>
+        </div>
+    </div>
+    <div class="card-body">
+        <div class="container">
+            <form [formGroup]="elevesform" (ngSubmit)="submitEleves()">
+                <div class="row">
+                    <div class="col-6">
+                        <label for="nom" class="form-label">NOM</label>
+                        <input type="nom" class="form-control" formControlName="nom" id="nom">
+                    </div>
+                    <div class="col-6">
+                        <label for="niveau" class="form-label">Prenom</label>
+                        <input type="niveau" class="form-control"  formControlName="niveau" id="niveau">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        <label for="serie" class="form-label">Adresse</label>
+                        <input type="serie" class="form-control" formControlName="serie" id="serie">
+                    </div>
+                    <div class="col-6">
+                        <label for="nombres_eleve"class="form-label">Telephone</label>
+                        <input type="nombres_eleve" class="form-control" formControlName="nombres_eleve" id="nombres_eleve">
+                    </div>
+                </div>
+                <div class="row">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>
