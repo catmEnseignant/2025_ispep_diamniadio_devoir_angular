@@ -1,0 +1,22 @@
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container">
+        <a class="navbar-brand" href="#">École Management</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" (click)="navigateTo('/')" style="cursor: pointer;">Accueil</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" (click)="navigateTo('/eleves')" style="cursor: pointer;">Élèves</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" (click)="navigateTo('/enseignants')" style="cursor: pointer;">Enseignants</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
