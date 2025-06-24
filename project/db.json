@@ -1,0 +1,48 @@
+{
+  "enseignants": [
+    {
+      "matricule": "MAT001",
+      "prenom": "Mame Diarra",
+      "nom": "ndiaye",
+      "telephone": "123456789",
+      "adresse": "Dakar",
+      "id": 1
+    },
+    {
+      "id": 2,
+      "matricule": "MAT002",
+      "prenom": "Pape Amadou",
+      "nom": "SARR",
+      "telephone": "987654321",
+      "adresse": "Dakar"
+    },
+    {
+      "matricule": "1",
+      "prenom": "abdoulaye",
+      "nom": "ndiaye",
+      "telephone": "777974740",
+      "adresse": "mariste",
+      "id": 3
+    }
+  ],
+  "eleves": [
+    {
+      "id": 1,
+      "numero_carte": "CARTE001",
+      "prenom": "Ibrahima",
+      "nom": "NDIAYE",
+      "adresse": "Dakar",
+      "telephone": "111222333",
+      "date_naissance": "2000-01-01"
+    },
+    {
+      "id": 2,
+      "numero_carte": "CARTE002",
+      "prenom": "Fatou",
+      "nom": "SENE",
+      "adresse": "Dakar",
+      "telephone": "444555666",
+      "date_naissance": "2001-02-02"
+    }
+  ]
+}
