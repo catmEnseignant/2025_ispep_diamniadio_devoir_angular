@@ -12,8 +12,12 @@ import { Router } from '@angular/router';
   styleUrls: ['./form-enseignant.component.css']
 })
 export class FormEnseignantComponent implements OnInit {
+storeEnseignant() {
+throw new Error('Method not implemented.');
+}
   classform: FormGroup;
   isEditMode = false;
+  currentEnseignantId: string | null = null;
 
   constructor(
     private fb: FormBuilder,
@@ -30,36 +34,37 @@ export class FormEnseignantComponent implements OnInit {
   }
 
   ngOnInit() {
-    const currentEnseignant = localStorage.getItem('currentEnseignant');
-    
-    if (currentEnseignant) {
-      this.isEditMode = true;
-      const enseignant = JSON.parse(currentEnseignant);
+    const enseignantData = localStorage.getItem('currentEnseignant');
+    if (enseignantData) {
+      const enseignant = JSON.parse(enseignantData);
+      this.currentEnseignantId = enseignant.id;
       this.classform.patchValue(enseignant);
+      this.isEditMode = true;
     }
   }
 
-  storeEnseignant() {
+  onSubmit() {
     if (this.classform.invalid) {
       alert('Veuillez remplir tous les champs obligatoires');
       return;
     }
 
-    const enseignantData = this.classform.value;
-    
-    if (this.isEditMode) {
-      // Logique de mise à jour
-      alert('Mise à jour non implémentée');
+    if (this.isEditMode && this.currentEnseignantId) {
+      this.enseignantService.updateEnseignant(this.currentEnseignantId, this.classform.value).subscribe(
+        () => {
+          alert('Enseignant modifié avec succès');
+          localStorage.removeItem('currentEnseignant');
+          this.router.navigate(['/enseignants/list-enseignant']);
+        },
+        (error) => console.error('Erreur:', error)
+      );
     } else {
-      this.enseignantService.storeEnseignant(enseignantData).subscribe(
+      this.enseignantService.storeEnseignant(this.classform.value).subscribe(
         () => {
           alert('Enseignant ajouté avec succès');
           this.router.navigate(['/enseignants/list-enseignant']);
         },
-        (error) => {
-          console.error('Erreur:', error);
-          alert('Une erreur est survenue lors de l\'ajout');
-        }
+        (error) => console.error('Erreur:', error)
       );
     }
   }

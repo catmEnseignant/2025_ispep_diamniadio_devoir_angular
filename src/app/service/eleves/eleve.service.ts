@@ -16,4 +16,12 @@ export class EleveService {
   storeEleve(eleve: any) {
     return this.http.post(`${this.host}/eleve`, eleve);
   }
+
+  updateEleve(id: string, eleve: any) {
+    return this.http.put(`${this.host}/eleve/${id}`, eleve);
+  }
+
+  deleteEleve(id: string) {
+    return this.http.delete(`${this.host}/eleve/${id}`);
+  }
 }

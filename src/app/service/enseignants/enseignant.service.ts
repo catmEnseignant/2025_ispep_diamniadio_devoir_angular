@@ -10,10 +10,18 @@ export class EnseignantService {
   constructor(private http: HttpClient) { }
 
   getEnseignant() {
-    return this.http.get(`${this.host}/enseignant`); // Endpoint corrigé
+    return this.http.get(`${this.host}/enseignant`);
   }
 
   storeEnseignant(enseignant: any) {
-    return this.http.post(`${this.host}/enseignant`, enseignant); // Endpoint corrigé
+    return this.http.post(`${this.host}/enseignant`, enseignant);
+  }
+
+  updateEnseignant(id: string, enseignant: any) {
+    return this.http.put(`${this.host}/enseignant/${id}`, enseignant);
+  }
+
+  deleteEnseignant(id: string) {
+    return this.http.delete(`${this.host}/enseignant/${id}`);
   }
 }

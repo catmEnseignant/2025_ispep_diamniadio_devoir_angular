@@ -11,7 +11,7 @@ import { EnseignantService } from '../../service/enseignants/enseignant.service'
   styleUrls: ['./list-enseignant.component.css']
 })
 export class ListEnseignantComponent implements OnInit {
-  enseignant: any[] = []; // Initialisation du tableau
+  enseignant: any[] = [];
 
   constructor(
     private router: Router,
@@ -24,14 +24,8 @@ export class ListEnseignantComponent implements OnInit {
 
   loadEnseignants() {
     this.enseignantService.getEnseignant().subscribe(
-      (response: any) => {
-        console.log('Réponse API:', response); // Debug
-        this.enseignant = response; // Correction ici
-      },
-      (error) => {
-        console.error('Erreur:', error);
-        alert('Erreur lors du chargement des enseignants');
-      }
+      (response: any) => this.enseignant = response,
+      (error) => console.error('Erreur:', error)
     );
   }
 
@@ -43,5 +37,17 @@ export class ListEnseignantComponent implements OnInit {
   editEnseignant(enseignant: any) {
     localStorage.setItem('currentEnseignant', JSON.stringify(enseignant));
     this.router.navigate(['/enseignants/form-enseignant']);
+  }
+
+  deleteEnseignant(id: string) {
+    if (confirm('Êtes-vous sûr de vouloir supprimer cet enseignant ?')) {
+      this.enseignantService.deleteEnseignant(id).subscribe(
+        () => {
+          alert('Enseignant supprimé avec succès');
+          this.loadEnseignants();
+        },
+        (error) => console.error('Erreur:', error)
+      );
+    }
   }
 }
