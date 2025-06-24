@@ -1,9 +1,9 @@
-import { routes } from './../../app.routes';
-import { Component, OnInit } from '@angular/core';
-import { Eleve } from '../../services/eleves';
+import { EleveService } from './../../services/eleve.service';
 
-import { CommonModule,} from '@angular/common';
-import { Router } from '@angular/router';
+import { CommonModule } from '@angular/common';
+
+import { Component, OnInit } from '@angular/core';
+
 
 @Component({
   selector: 'app-liste-eleve',
@@ -12,37 +12,43 @@ import { Router } from '@angular/router';
   styleUrl: './liste-eleve.component.css'
 })
 export class ListeEleveComponent implements OnInit {
-  
-     // Liste des étudiants à afficher
-  eleves: Eleve[] = [];
- 
 
-  constructor(private routes: Router) {}
 
-  // Cette fonction est automatiquement appelée quand la page se charge
+
+
+
+
+  eleves: any[] = [];
+
+  constructor(private eleveService:EleveService) {}
+
   ngOnInit(): void {
-    this.chargerEtudiants();
+    this.chargerEleves();
   }
 
-  // On récupère les étudiants sauvegardés dans le navigateur
-  chargerEtudiants() {
-    const data = localStorage.getItem('etudiants'); // On récupère les données
-    this.eleves = data ? JSON.parse(data) : []; // Si des données existent, on les transforme en tableau
+  chargerEleves(): void {
+    this.eleveService.getEleves().subscribe({
+      next: (data) => {
+        this.eleves = data;
+      },
+      error: (error) => {
+        console.error('Erreur lors du chargement des élèves :', error);
+      }
+    });
   }
-  ajouter() {
-  this.routes.navigate(['/ajouter']);
+
+  supprimerEleve(id: number): void {
+    if (confirm('Voulez-vous vraiment supprimer cet élève ?')) {
+      this.eleveService.supprimerEleve(id).subscribe({
+        next: () => {
+          // Supprime localement
+          this.eleves = this.eleves.filter(e => e.id !== id);
+        },
+        error: (error) => {
+          console.error('Erreur lors de la suppression :', error);
+          alert('Erreur de suppression.');
+        }
+      });
+    }
+  }
 }
-
-  // Quand on clique sur Modifier, on redirige vers /modifier/:id
-  modifier(id: number) {
-    this.routes.navigate(['/modifier', id]);
-  }
-
-  // Quand on clique sur Supprimer
-  supprimer(id: number) {
-    this.eleves = this.eleves.filter(e => e.id !== id); // On enlève l'étudiant avec cet id
-    localStorage.setItem('etudiants', JSON.stringify(this.eleves)); // On met à jour le stockage
-  }
-}
-
-

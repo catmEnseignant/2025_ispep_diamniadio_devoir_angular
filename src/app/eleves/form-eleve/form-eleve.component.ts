@@ -1,59 +1,70 @@
-import { Eleve } from './../../services/eleves';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
+import { EleveService } from '../../services/eleve.service';
 
 @Component({
   selector: 'app-form-eleve',
-  imports: [],
+  standalone: true,
+  imports: [CommonModule, ReactiveFormsModule],
   templateUrl: './form-eleve.component.html',
-  styleUrl: './form-eleve.component.css'
+  styleUrls: ['./form-eleve.component.css']
 })
-export class FormEleveComponent {
-  etudiant: Eleve = {
-     id?:" number";
-  numero_carte: "string";
-  prenom:" string;"
-  nom: string;
-  adresse: string;
-  telephone: string;
-  date_naissance: Date
-}
-  };
+export class FormEleveComponent implements OnInit {
+  form: FormGroup;
+  isEdit = false;
+  id: number | null = null;
 
-  mode: 'ajout' | 'modif' = 'ajout'; // Pour savoir si on est en train d’ajouter ou modifier
-
-  constructor(private route: ActivatedRoute, private router:Router) {}
+  constructor(
+    private fb: FormBuilder,
+    private route: ActivatedRoute,
+    private router: Router,
+    private eleveService: EleveService
+  ) {
+    this.form = this.fb.group({
+      numero_carte: ['', Validators.required],
+      prenom: ['', Validators.required],
+      nom: ['', Validators.required],
+      adresse: [''],
+      telephone: [''],
+      date_naissance: ['']
+    });
+  }
 
   ngOnInit(): void {
-    const idFromUrl = this.route.snapshot.paramMap.get('id'); // On récupère l’ID dans l’URL
-
-    if (idFromUrl) {
-      // Si un id est présent dans l’URL, on est en mode modification
-      this.mode = 'modif';
-      const etudiants = JSON.parse(localStorage.getItem('etudiants') || '[]');
-      const existant = etudiants.find((e: Etudiant) => e.id === +idFromUrl);
-      if (existant) {
-        this.etudiant = existant;
-      }
+    this.id = this.route.snapshot.params['id'];
+    if (this.id) {
+      this.isEdit = true;
+      this.eleveService.getEleveById(this.id).subscribe({
+        next: (data) => this.form.patchValue(data),
+        error: (err) => console.error('Erreur chargement élève', err)
+      });
     }
   }
 
-  enregistrer() {
-    const etudiants = JSON.parse(localStorage.getItem('etudiants') || '[]');
+  enregistrer(): void {
+    if (this.form.invalid) return;
 
-    if (this.mode === 'ajout') {
-      // on génère un ID unique basé sur le temps
-      this.etudiant.id = Date.now();
-      etudiants.push(this.etudiant);
+    const eleveData = this.form.value;
+
+    if (this.isEdit && this.id !== null) {
+      this.eleveService.modifierEleve(this.id, eleveData).subscribe({
+        next: () => this.router.navigate(['/eleves/liste-eleve']),
+        error: (err) => {
+          console.error('Erreur modification élève', err);
+          alert('Échec de la modification.');
+        }
+      });
     } else {
-      const index = etudiants.findIndex((e: Etudiant) => e.id === this.etudiant.id);
-      if (index !== -1) {
-        etudiants[index] = this.etudiant;
-      }
+      this.eleveService.ajouterEleve(eleveData).subscribe({
+        next: () => this.router.navigate(['/eleves/liste-eleve']),
+        error: (err) => {
+          console.error('Erreur ajout élève', err);
+          alert('Échec de l\'ajout.');
+        }
+      });
     }
-
-    // On enregistre la liste mise à jour dans le navigateur
-    localStorage.setItem('etudiants', JSON.stringify(etudiants));
-    this.router.navigate(['/etudiants']); // On retourne à la page liste
   }
 }
 

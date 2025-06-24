@@ -1,47 +1,35 @@
-<div class="card container fluid">
-  <div class="card-header">
-      <div class="row">
-          <div class="col-4">
-            <h4> Liste des élèves</h4>
-          </div>
-          <div class="col-4">
-            <h4> Nombre d'élèves </h4>
-          </div>
-          <div class="col-4">
-            <button (click)="ajouter()">➕>Ajouter un élève</button>
-          </div>
+<div class="container mt-4">
+  <div class="d-flex justify-content-between align-items-center mb-3">
+    <h3>Liste des élèves</h3>
+    <h3>Nombre d'élèves</h3>
+    <a href="/eleves/ajouter" class="btn btn-success">➕ Ajouter un élève</a>
+  </div>
 
-      </div>
+  <table class="table table-bordered table-hover">
+    <thead class="table-dark">
+      <tr>
+        <th>Numéro Carte</th>
+        <th>Prénom</th>
+        <th>Nom</th>
+        <th>Adresse</th>
+        <th>Téléphone</th>
+        <th>Date Naissance</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let eleve of eleves">
+        <td>{{ eleve.numero_carte }}</td>
+        <td>{{ eleve.prenom }}</td>
+        <td>{{ eleve.nom }}</td>
+        <td>{{ eleve.adresse }}</td>
+        <td>{{ eleve.telephone }}</td>
+        <td>{{ eleve.date_naissance }}</td>
+        <td>
+          <a href="/eleves/modifier/{{eleve.id}}" class="btn btn-sm btn-warning me-2">✏️</a>
+          <button class="btn btn-sm btn-danger" (click)="supprimerEleve(eleve.id)">🗑️</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
 </div>
-<table class="table">
-  <thead>
-    <tr>
-      <th scope="col">numero_carte</th>
-      <th scope="col">prenom</th>
-      <th scope="col">nom</th>
-      <th scope="col">adresse</th>
-      <th scope="col">telephone</th>
-      <th scope="col">date_naissance</th>
-       <th scope="col">Action</th>
-    </tr>
-  </thead>
-  <tbody class="table-group-divider">
-    <tr *ngFor = "let classe of classes">
-      <th scope="row">{{classe.nom  }}</th>
-      <td>{{classe.numero_carte}}</td>
-      <td>{{classe. prenom}}</td>
-      <td>{{classe.nom}}</td>
-      <td>{{classe.adresse}}</td>
-      <td>{{classe.telephone}}</td>
-      <td>{{classe.date_naissance}}</td>
-
-
-      
-    </tr>
-      <td>
-      <button (click)="modifier(e.id)">✏️ Modifier</button>
-      <button (click)="supprimer(e.id)">🗑 Supprimer</button>
-    </td>
-
-  </tbody>
-</table>

@@ -1,1 +1,36 @@
-<p>form-enseignant works!</p>
+<div class="container mt-5">
+  <h2 class="mb-4 text-center">{{ isEdit ? 'Modifier' : 'Ajouter' }} un enseignant</h2>
+
+  <form [formGroup]="form" (ngSubmit)="enregistrer()" class="w-75 mx-auto">
+    <div class="mb-3">
+      <label class="form-label">Matricule</label>
+      <input type="text" class="form-control" formControlName="matricule" />
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Prénom</label>
+      <input type="text" class="form-control" formControlName="prenom" />
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Nom</label>
+      <input type="text" class="form-control" formControlName="nom" />
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Téléphone</label>
+      <input type="text" class="form-control" formControlName="telephone" />
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Adresse</label>
+      <input type="text" class="form-control" formControlName="adresse" />
+    </div>
+
+    <div class="text-center">
+      <button class="btn btn-success" type="submit">
+        {{ isEdit ? 'Mettre à jour' : 'Ajouter' }}
+      </button>
+    </div>
+  </form>
+</div>

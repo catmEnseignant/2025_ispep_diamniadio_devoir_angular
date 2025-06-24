@@ -1,4 +1,14 @@
 {
-"enseignants": [],
-"eleves": []
+  "enseignants": [],
+  "eleves": [
+    {
+      "numero_carte": "575884",
+      "prenom": "FABI",
+      "nom": "BA",
+      "adresse": "Dakar",
+      "telephone": "77799930",
+      "date_naissance": "2025-06-21",
+      "id": "676d"
+    }
+  ]
 }

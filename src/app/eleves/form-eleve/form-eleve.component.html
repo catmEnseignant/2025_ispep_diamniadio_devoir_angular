@@ -1,1 +1,36 @@
-<p>form-eleve works!</p>
+<div class="container mt-5">
+  <h3 class="mb-4">{{ isEdit ? 'Modifier un élève' : 'Ajouter un élève' }}</h3>
+
+  <form [formGroup]="form" (ngSubmit)="enregistrer()">
+    <div class="mb-3">
+      <label>Numéro Carte</label>
+      <input formControlName="numero_carte" class="form-control" required id="numero_carte" />
+          
+    </div>
+    <div class="mb-3">
+      <label>Prénom</label>
+      <input formControlName="prenom" class="form-control" required />
+    </div>
+    <div class="mb-3">
+      <label>Nom</label>
+   <input type="nom" class="form-control"formControlName="nom" id="nom">
+    </div>
+    <div class="mb-3">
+      <label>Adresse</label>
+      <input formControlName="adresse" class="form-control" />
+    </div>
+    <div class="mb-3">
+      <label>Téléphone</label>
+      <input formControlName="telephone" class="form-control" />
+    </div>
+    <div class="mb-3">
+      <label>Date de naissance</label>
+      <input type="date" formControlName="date_naissance" class="form-control" />
+    </div>
+    <div class="text-end mt-4 mb-5">
+  <button class="btn btn-success" type="submit">
+    {{ isEdit ? 'Modifier' : 'Ajouter' }}
+  </button>
+</div>
+  </form>
+</div>

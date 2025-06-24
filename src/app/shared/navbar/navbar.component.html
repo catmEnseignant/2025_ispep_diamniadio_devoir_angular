@@ -1,21 +1,20 @@
-
-<nav class="navbar navbar-expand-lg navbar-light bg-black  justify-content-between">
-  <a class="navbar-brand text-white ">Navbar</a>
-  <ul class="navbar-nav mr-auto">
-    <li class="nav-item active">
-      <a class="nav-link text-white" href="/">Accueil <span class="sr-only"></span></a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link text-white" href="enseignants/liste-enseignant">Enseignants</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link text-white" href="eleves/liste-eleve">Eleves</a>
-    </li>
-  </ul>
-  <form class="form-inline d-fex">
-    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-  </form>
-  <div></div>
-
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark px-4">
+  <a class="navbar-brand text-white" href="/home">ISEP DFE</a>
+  <div class="collapse navbar-collapse">
+    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+      <li class="nav-item">
+        <a class="nav-link text-white" href="/home">Accueil</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-white" href="/eleves/liste-eleve">Élèves</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-white" href="/enseignants/liste-enseignant">Enseignants</a>
+      </li>
+    </ul>
+    <form class="d-flex">
+      <input class="form-control me-2" type="search" placeholder="🔍 Rechercher" aria-label="Search">
+      <button class="btn btn-outline-success" type="submit">Rechercher</button>
+    </form>
+  </div>
 </nav>

@@ -1,0 +1,16 @@
+input.ng-invalid.ng-untouched {
+  border-color: #ced4da !important; /* couleur grise normale Bootstrap */
+  box-shadow: none !important;
+}
+.container {
+  max-height: 80vh;
+  overflow-y: auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: white;
+}
+form {
+  max-width: 600px;
+  margin: auto;
+}

@@ -1,14 +1,15 @@
-import { FooterComponent } from './footer/footer.component';
-import {Component, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import {HttpClient} from "@angular/common/http";
 import { NavbarComponent } from './shared/navbar/navbar.component';
+import { FooterComponent } from './footer/footer.component';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet,NavbarComponent,FooterComponent],
+  standalone: true,
+  imports: [RouterOutlet, NavbarComponent, FooterComponent],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrls: ['./app.component.css'] // ✅ pas styleUrl
 })
 export class AppComponent implements OnInit{
   title = 'angular_project';
