@@ -1,0 +1,31 @@
+<div class="container mt-4">
+  <h3>{{ isEditMode ? 'Modifier un élève' : 'Ajouter un élève' }}</h3>
+  <form (ngSubmit)="onSubmit()">
+    <div class="mb-3">
+      <label class="form-label">Numéro carte</label>
+      <input class="form-control" [(ngModel)]="eleve.numero_carte" name="numero_carte" required />
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Prénom</label>
+      <input class="form-control" [(ngModel)]="eleve.prenom" name="prenom" required />
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Nom</label>
+      <input class="form-control" [(ngModel)]="eleve.nom" name="nom" required />
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Adresse</label>
+      <input class="form-control" [(ngModel)]="eleve.adresse" name="adresse" required />
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Téléphone</label>
+      <input class="form-control" [(ngModel)]="eleve.telephone" name="telephone" required />
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Date de naissance</label>
+      <input class="form-control" type="date" [(ngModel)]="eleve.date_naissance" name="date_naissance" required />
+    </div>
+    <button class="btn btn-primary" type="submit">{{ isEditMode ? 'Modifier' : 'Ajouter' }}</button>
+    <a routerLink="/eleves" class="btn btn-secondary ms-2">Annuler</a>
+  </form>
+</div>

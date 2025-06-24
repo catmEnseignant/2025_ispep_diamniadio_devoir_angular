@@ -1,0 +1,83 @@
+{
+  "eleves": [
+    {
+      "id": null,
+      "numero_carte": "213",
+      "prenom": "diop",
+      "nom": "aicha",
+      "adresse": "ZRTYYU",
+      "telephone": "123456767878",
+      "date_naissance": "2025-06-20"
+    },
+    {
+      "id": null,
+      "numero_carte": "142",
+      "prenom": "Fatou",
+      "nom": "Mbop",
+      "adresse": "ytyuui",
+      "telephone": "127643778",
+      "date_naissance": "2025-05-31"
+    },
+    {
+      "id": null,
+      "numero_carte": "123",
+      "prenom": "Amy",
+      "nom": "Faye",
+      "adresse": "zeertyy",
+      "telephone": "12233456",
+      "date_naissance": "2025-06-20"
+    },
+    {
+      "id": null,
+      "numero_carte": "12334",
+      "prenom": "diop",
+      "nom": "RTYYU",
+      "adresse": "ZETUIPO",
+      "telephone": "123456767878",
+      "date_naissance": "2025-06-08"
+    },
+    {
+      "id": null,
+      "numero_carte": "142",
+      "prenom": "siny",
+      "nom": "ndoy",
+      "adresse": "ATYYUUI",
+      "telephone": "12233456",
+      "date_naissance": "2025-06-29"
+    }
+  ],
+  "enseignants": [
+    {
+      "id": "463c",
+      "prenom": "Aida",
+      "nom": "Tine",
+      "adresse": "bambey",
+      "telephone": "12345678",
+      "date_naissance": "2025-06-26"
+    },
+    {
+      "id": "b6ae",
+      "prenom": "Asta",
+      "nom": "Tine",
+      "adresse": "diourbel",
+      "telephone": "1234567",
+      "date_naissance": "2025-06-06"
+    },
+    {
+      "id": "4c85",
+      "prenom": "Adama",
+      "nom": "Tine",
+      "adresse": "Thies",
+      "telephone": "2345678",
+      "date_naissance": "2025-06-29"
+    },
+    {
+      "id": "7d86",
+      "prenom": "Saly",
+      "nom": "Nian",
+      "adresse": "qsdfkll",
+      "telephone": "1234567",
+      "date_naissance": "2025-06-28"
+    }
+  ]
+}

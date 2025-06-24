@@ -1,0 +1,41 @@
+<div class="container mt-4">
+  <div class="d-flex justify-content-between align-items-center mb-3">
+    <h3>Liste des élèves</h3>
+    <div>
+      <span class="badge bg-primary me-3">Nombre d'élèves : {{ eleves.length }}</span>
+      <button class="btn btn-success" routerLink="/eleves/add">Ajouter un élève</button>
+    </div>
+  </div>
+
+  <table class="table table-bordered table-striped">
+    <thead class="table-light">
+      <tr>
+        <th>Numéro carte</th>
+        <th>Prénom</th>
+        <th>Nom</th>
+        <th>Adresse</th>
+        <th>Téléphone</th>
+        <th>Date de naissance</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let eleve of eleves">
+        <td>{{ eleve.numero_carte }}</td>
+        <td>{{ eleve.prenom }}</td>
+        <td>{{ eleve.nom }}</td>
+        <td>{{ eleve.adresse }}</td>
+        <td>{{ eleve.telephone }}</td>
+        <td>{{ eleve.date_naissance | date:'dd/MM/yyyy' }}</td>
+        <td>
+          <button class="btn btn-sm btn-primary me-2" [routerLink]="['/eleves/edit', eleve.id]">
+            <i class="bi bi-pencil"></i>
+          </button>
+          <button class="btn btn-sm btn-danger" (click)="confirmDelete(eleve.id)">
+            <i class="bi bi-trash"></i>
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

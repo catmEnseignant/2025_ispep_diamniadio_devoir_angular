@@ -1,0 +1,23 @@
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+
+import { ListeElevesComponent } from './liste-eleves.component';
+
+describe('ListeElevesComponent', () => {
+  let component: ListeElevesComponent;
+  let fixture: ComponentFixture<ListeElevesComponent>;
+
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      imports: [ListeElevesComponent]
+    })
+    .compileComponents();
+
+    fixture = TestBed.createComponent(ListeElevesComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
+
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+});
