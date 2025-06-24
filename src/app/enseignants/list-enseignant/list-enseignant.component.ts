@@ -11,7 +11,7 @@ import { EnseignantService } from '../../service/enseignants/enseignant.service'
   styleUrls: ['./list-enseignant.component.css']
 })
 export class ListEnseignantComponent implements OnInit {
-  enseignant: any[] = [];
+  enseignant: any[] = []; // Initialisation du tableau
 
   constructor(
     private router: Router,
@@ -19,17 +19,24 @@ export class ListEnseignantComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.loadEnseignants();
+  }
+
+  loadEnseignants() {
     this.enseignantService.getEnseignant().subscribe(
       (response: any) => {
-        this.enseignant = response;
+        console.log('Réponse API:', response); // Debug
+        this.enseignant = response; // Correction ici
       },
       (error) => {
         console.error('Erreur:', error);
+        alert('Erreur lors du chargement des enseignants');
       }
     );
   }
 
   addEnseignant() {
+    localStorage.removeItem('currentEnseignant');
     this.router.navigate(['/enseignants/form-enseignant']);
   }
 

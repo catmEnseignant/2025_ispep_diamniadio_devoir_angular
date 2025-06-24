@@ -5,18 +5,15 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class EnseignantService {
+  private host = "http://localhost:3000";
 
+  constructor(private http: HttpClient) { }
 
-  constructor(private httpClient:HttpClient) { }
-
-    host="http://localhost:3000"
-
-  getEnseignant(){
-    
-    return this.httpClient.get(this.host+ "/enseignants")
-
+  getEnseignant() {
+    return this.http.get(`${this.host}/enseignant`); // Endpoint corrigé
   }
-    storeEnseignant(enseignant:any){
-    return this.httpClient.post(this.host+ "/enseignants", enseignant)
+
+  storeEnseignant(enseignant: any) {
+    return this.http.post(`${this.host}/enseignant`, enseignant); // Endpoint corrigé
   }
 }

@@ -29,6 +29,7 @@
           </tr>
         </thead>
         <tbody>
+          <!-- Correction de la variable ici -->
           <tr *ngFor="let e of enseignant">
             <td>{{e.matricule}}</td>
             <td>{{e.prenom}}</td>
@@ -46,6 +47,11 @@
           </tr>
         </tbody>
       </table>
+    </div>
+    
+    <!-- Message si aucun enseignant -->
+    <div *ngIf="enseignant.length === 0" class="alert alert-info text-center">
+      Aucun enseignant trouvé
     </div>
   </div>
 </div>
