@@ -1,0 +1,60 @@
+<div class="card container-fluid">
+  <div class="card-header">
+    <div class="row">
+      <div class="col-4">
+        <h4>Liste des eleves</h4>
+      </div>
+
+      <div class="col-4">
+        <h4>Nombres des eleves {{eleves?.length}}</h4>
+      </div>
+
+      <div class="col-4">
+        <button class="btn btn-primary" (click)="addEleve()">Ajouter un eleve</button>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="card-body">
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">numero_carte</th>
+          <th scope="col">prenom</th>
+          <th scope="col">nom</th>
+          <th scope="col">telephone</th>
+          <th scope="col">adresse</th>
+          <th scope="col">date_naissance</th>
+          <th scope="col">Actions</th>
+
+
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let eleve of eleves">
+          <th scope="row">{{eleve.numero_carte}}</th>
+          <td>{{eleve.prenom}}</td>
+          <td>{{eleve.nom}}</td>
+          <td>{{eleve.telephone}}</td>
+          <td>{{eleve.adresse}}</td>
+          <td>{{eleve.date_naissance}}</td>
+          <!-- Exemple dans une table ou une liste -->
+         <td>
+           <button class="btn btn-warning btn-sm me-2" (click)="editEleve(eleve)">
+           <i class="bi bi-pencil-square"></i>
+           </button>
+           <button class="btn btn-danger btn-sm" (click)="deleteEleve(eleve)" >
+             <i class="bi bi-trash"></i>
+           </button>
+         </td>
+        </tr>
+
+      </tbody>
+      
+    </table>
+  </div>
+</div>
+
+
+

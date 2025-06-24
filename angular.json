@@ -10,33 +10,29 @@
       "sourceRoot": "src",
       "prefix": "app",
       "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-angular:application",
-          "options": {
-            "outputPath": "dist/angular_project",
-            "index": "src/index.html",
-            "browser": "src/main.ts",
-            "polyfills": [
-              "zone.js"
-            ],
-            "tsConfig": "tsconfig.app.json",
-            "assets": [
-              {
-                "glob": "**/*",
-                "input": "public"
-              }
-            ],
-            "styles": [
-              "src/styles.css",
-              "node_modules/bootstrap/dist/css/bootstrap.css"
-            ],
-            "scripts": [],
-            "server": "src/main.server.ts",
-            "outputMode": "server",
-            "ssr": {
-              "entry": "src/server.ts"
-            }
-          },
+      "build": {
+      "builder": "@angular-devkit/build-angular:application",
+      "options": {
+      "outputPath": "dist/gestion-scolaire",
+      "index": "src/index.html",
+      "browser": "src/main.ts",
+      "polyfills": [
+      "zone.js"
+    ],
+     "tsConfig": "tsconfig.app.json",
+     "assets": [
+      {
+        "glob": "**/*",
+        "input": "public"
+      }
+     ],
+    "styles": [
+      "src/styles.css",
+      "node_modules/bootstrap-icons/font/bootstrap-icons.css"
+     ],
+     "scripts": []
+    },
+
           "configurations": {
             "production": {
               "budgets": [
@@ -91,15 +87,18 @@
               }
             ],
             "styles": [
-              "src/styles.css"
+               "src/styles.css",
+              "node_modules/bootstrap-icons/font/bootstrap-icons.css"
             ],
-            "scripts": []
+            "scripts": [
+
+            ]
           }
         }
       }
     }
   },
   "cli": {
-    "analytics": "5b233bfc-7041-493e-9a7c-627934a20185"
+    "analytics": "e21b92e1-e31d-4c82-880a-c16042a63deb"
   }
 }
