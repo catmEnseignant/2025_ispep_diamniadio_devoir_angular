@@ -1,29 +1,25 @@
-import {Component, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 import { RouterOutlet } from '@angular/router';
-import {HttpClient} from "@angular/common/http";
+import { NavbarComponent } from './shared/composants/navbar/navbar.component';
+import { FooterComponent } from './shared/composants/footer/footer.component';
 
 @Component({
   selector: 'app-root',
-  imports: [],
+  standalone: true, // ✅ important pour Angular 17+
+  imports: [RouterOutlet, NavbarComponent, FooterComponent], // ✅ important
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit{
+export class AppComponent implements OnInit {
   title = 'angular_project';
 
-  constructor( private httpClient: HttpClient) {
-
-  }
+  constructor(private httpClient: HttpClient) {}
 
   ngOnInit() {
-    this.httpClient.get("http://localhost:3000/eleves").subscribe(
-        (response) =>{
-          console.log(response);
-        }, (error) => {
-          console.log(error);
-        }
-    )
+    this.httpClient.get("http://localhost:3000/eleves").subscribe({
+      next: (response) => console.log(response),
+      error: (err) => console.error(err)
+    });
   }
-
-
 }

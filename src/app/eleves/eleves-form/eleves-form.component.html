@@ -1,0 +1,55 @@
+<h3 *ngIf="!isEditMode">Ajouter un élève</h3>
+<h3 *ngIf="isEditMode">Modifier un élève</h3>
+
+<form [formGroup]="eleveForm" (ngSubmit)="onSubmit()" novalidate>
+  <div class="mb-3">
+    <label for="numero_carte" class="form-label">Numéro carte</label>
+    <input type="text" id="numero_carte" class="form-control" formControlName="numero_carte" />
+    <div *ngIf="eleveForm.get('numero_carte')?.invalid && eleveForm.get('numero_carte')?.touched" class="text-danger">
+      Le numéro de carte est requis.
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <label for="prenom" class="form-label">Prénom</label>
+    <input type="text" id="prenom" class="form-control" formControlName="prenom" />
+    <div *ngIf="eleveForm.get('prenom')?.invalid && eleveForm.get('prenom')?.touched" class="text-danger">
+      Le prénom est requis.
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <label for="nom" class="form-label">Nom</label>
+    <input type="text" id="nom" class="form-control" formControlName="nom" />
+    <div *ngIf="eleveForm.get('nom')?.invalid && eleveForm.get('nom')?.touched" class="text-danger">
+      Le nom est requis.
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <label for="adresse" class="form-label">Adresse</label>
+    <input type="text" id="adresse" class="form-control" formControlName="adresse" />
+    <div *ngIf="eleveForm.get('adresse')?.invalid && eleveForm.get('adresse')?.touched" class="text-danger">
+      L'adresse est requise.
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <label for="telephone" class="form-label">Téléphone</label>
+    <input type="text" id="telephone" class="form-control" formControlName="telephone" />
+    <div *ngIf="eleveForm.get('telephone')?.invalid && eleveForm.get('telephone')?.touched" class="text-danger">
+      Le téléphone est requis et doit contenir uniquement des chiffres.
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <label for="date_naissance" class="form-label">Date de naissance</label>
+    <input type="date" id="date_naissance" class="form-control" formControlName="date_naissance" />
+    <div *ngIf="eleveForm.get('date_naissance')?.invalid && eleveForm.get('date_naissance')?.touched" class="text-danger">
+      La date de naissance est requise.
+    </div>
+  </div>
+
+  <button type="submit" class="btn btn-success me-2">Enregistrer</button>
+  <button type="button" class="btn btn-secondary" (click)="onCancel()">Annuler</button>
+</form>
