@@ -5,7 +5,7 @@ export const APP_ROUTES: Routes = [
   {
     path: 'eleves',
     loadChildren: () =>
-      import('./eleves/eleves.routes').then(m => m.elevesRoutes),
+      import('./eleves/eleves.routes').then(m => m.ELEVES_ROUTES),
   },
   {
     path: 'home',

@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ElevesFormComponent } from './eleves-form.component';
+import { ListEleveComponent } from './list-eleve.component';
 
-describe('ElevesFormComponent', () => {
-  let component: ElevesFormComponent;
-  let fixture: ComponentFixture<ElevesFormComponent>;
+describe('ListEleveComponent', () => {
+  let component: ListEleveComponent;
+  let fixture: ComponentFixture<ListEleveComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ElevesFormComponent]
+      imports: [ListEleveComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(ElevesFormComponent);
+    fixture = TestBed.createComponent(ListEleveComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -1,0 +1,47 @@
+<div class="card container-fluid">
+  <div class="card-header">
+    <div class="row">
+      <div class="col-4">
+        <h4>Liste des Enseignants</h4>
+      </div>
+      <div class="col-4">
+        <h4>Nombre d'enseignants : {{ nombreEnseignants }}</h4>
+      </div>
+      <div class="col-4 text-end">
+        <button class="btn btn-primary" (click)="addEnseignant()">Ajouter un Enseignant</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="card-body">
+    <table class="table table-bordered table-striped">
+      <thead>
+        <tr>
+          <th>Matricule</th>
+          <th>Prénom</th>
+          <th>Nom</th>
+          <th>Adresse</th>
+          <th>Téléphone</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let enseignant of enseignants">
+          <td>{{ enseignant.matricule }}</td>
+          <td>{{ enseignant.prenom }}</td>
+          <td>{{ enseignant.nom }}</td>
+          <td>{{ enseignant.adresse }}</td>
+          <td>{{ enseignant.telephone }}</td>
+          <td>
+            <button class="btn btn-sm btn-warning me-2" (click)="editEnseignant(enseignant)">
+              <i class="bi bi-pencil-square"></i>
+            </button>
+            <button class="btn btn-sm btn-danger" (click)="deleteEnseignant(enseignant)">
+              <i class="bi bi-trash"></i>
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
