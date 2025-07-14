@@ -19,7 +19,7 @@
     <table class="table table-bordered table-hover">
       <thead class="table-light">
         <tr>
-          <th scope="col">#</th>
+          <th scope="col">Numero de Carte</th>
           <th scope="col">Prénom</th>
           <th scope="col">Nom</th>
           <th scope="col">Adresse</th>
@@ -38,14 +38,14 @@
           <td>{{ eleve.telephone }}</td>
           <td>{{ eleve.date_naissance | date:'dd/MM/yyyy' }}</td>
           <td>
-            <button class="btn btn-warning btn-sm me-2" (click)="editEleve(eleve)">
-              <i class="bi bi-pencil-square"></i>
-            </button>
-
-            <button class="btn btn-danger btn-sm" (click)="deleteEleve(eleve)">
-              <i class="bi bi-trash"></i>
-            </button>
-          </td>
+           <button class="btn btn-sm btn-warning me-2" (click)="editEleve(eleve)">
+    <img src="assets/icons/edit.png" alt="🖊️" width="20" height="20" />
+  </button>
+  <button class="btn btn-sm btn-danger" (click)="deleteEleve(eleve)">
+    <img src="assets/icons/delete.png" alt="❌" width="20" height="20" />
+  </button>
+</td>
+          
         </tr>
       </tbody>
     </table>

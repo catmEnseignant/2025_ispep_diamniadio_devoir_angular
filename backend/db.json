@@ -4,7 +4,7 @@
       "id": "089e",
       "numero_carte": "089e",
       "prenom": "Inconnu",
-      "nom": "bdf",
+      "nom": "bd",
       "adresse": "Inconnu",
       "telephone": "Inconnu",
       "date_naissance": "2005-01-01"
@@ -23,19 +23,19 @@
       "numero_carte": "2",
       "prenom": "alette",
       "nom": "fe",
-      "adresse": "s;s",
+      "adresse": "asdfg",
       "telephone": "23",
       "date_naissance": "2025-06-26"
     }
   ],
   "enseignants": [
     {
-      "id": "a002",
-      "matricule": "EN002",
+      "matricule": "EN003",
       "prenom": "Fatou",
       "nom": "Diop",
+      "adresse": "Thiès",
       "telephone": "770000002",
-      "adresse": "Thiès"
+      "id": "a002"
     },
     {
       "id": "a003",
@@ -49,7 +49,7 @@
       "matricule": "qw",
       "prenom": "sass",
       "nom": "pene",
-      "adresse": "dakar",
+      "adresse": "Dakar",
       "telephone": "1356",
       "id": "db1d"
     }
