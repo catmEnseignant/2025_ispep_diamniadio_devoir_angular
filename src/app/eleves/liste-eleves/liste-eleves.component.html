@@ -1,31 +1,47 @@
 <div class="container mt-4">
-  <h4>Liste des élèves</h4>
+  <div class="row mb-3 align-items-center">
+    <div class="col-md-4">
+      <h4>Liste des eleves</h4>
+    </div>
 
-  <table class="table table-bordered">
-    <thead>
-      <tr>
-        <th>Prénom</th>
-        <th>Nom</th>
-        <th>Adresse</th>
-        <th>Téléphone</th>
-        <th>Date de naissance</th>
-        <th>Actions</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let eleve of eleves">
-        <td>{{ eleve.prenom }}</td>
-        <td>{{ eleve.nom }}</td>
-        <td>{{ eleve.adresse }}</td>
-        <td>{{ eleve.telephone }}</td>
-        <td>{{ eleve.date_naissance }}</td>
-        <td>
-          <button class="btn btn-sm btn-primary" (click)="editer(eleve)">Éditer</button>
-          <button class="btn btn-sm btn-danger" (click)="supprimer(eleve)">Supprimer</button>
-        </td>
-      </tr>
-    </tbody>
-  </table>
+    <div class="col-md-4 text-center">
+      <h4>Nombre d'eleves {{eleves.length}}</h4>
+    </div>
 
-  <button class="btn btn-success mt-3" (click)="ajouter()">Ajouter un élève</button>
+    <div class="col-md-4 text-end">
+      <button class="btn btn-primary" (click)="addEleve()">Ajouter une eleve</button>
+    </div>
+  </div>
+
+  <div class="card-body">
+    <div class="table-responsive d-flex justify-content-center">
+      <table class="table table-bordered table-striped" *ngIf="eleves.length > 0">
+        <thead>
+          <tr>
+            <th scope="col">Numero_carte</th>
+            <th scope="col">Prenom</th>
+            <th scope="col">Nom</th>
+            <th scope="col">Adresse</th>
+            <th scope="col">Telephone</th>
+            <th scope="col">Date_naissance</th>
+            <th scope="col">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let eleve of eleves">
+            <th scope="row">{{eleve.numero_carte}}</th>
+            <td>{{eleve.prenom}}</td>
+            <td>{{eleve.nom}}</td>
+            <td>{{eleve.adresse}}</td>
+            <td>{{eleve.telephone}}</td>
+            <td>{{eleve.date_naissance}}</td>
+            <td>
+              <button class="btn btn-sm btn-primary" (click)="editer(eleve)">Éditer</button>
+              <button class="btn btn-sm btn-danger" (click)="supprimer(eleve)">Supprimer</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
 </div>

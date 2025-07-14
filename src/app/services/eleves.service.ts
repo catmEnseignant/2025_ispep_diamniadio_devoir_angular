@@ -3,13 +3,15 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 export interface Eleve {
-  id?: number;
+  id?: string;
+  numero_carte: string;
   prenom: string;
   nom: string;
-  adresse?: string;
-  telephone?: string;
-  date_naissance?: string;
+  adresse: string;
+  telephone: string;
+  date_naissance: string;
 }
+
 
 @Injectable({
   providedIn: 'root'
@@ -23,19 +25,19 @@ export class ElevesService {
     return this.http.get<Eleve[]>(this.apiUrl);
   }
 
-  deleteEleve(id: number): Observable<any> {
+  deleteEleve(id: string): Observable<any> {
     return this.http.delete(`${this.apiUrl}/${id}`);
   }
 
-  getEleveById(id: number): Observable<Eleve> {
+  getEleveById(id: string): Observable<Eleve> {
     return this.http.get<Eleve>(`${this.apiUrl}/${id}`);
   }
 
-  ajouterEleve(eleve: Eleve): Observable<Eleve> {
+  addEleve(eleve: Eleve): Observable<Eleve> {
     return this.http.post<Eleve>(this.apiUrl, eleve);
   }
 
-  updateEleve(eleve: Eleve): Observable<Eleve> {
+  editerEleve(eleve: Eleve): Observable<Eleve> {
     return this.http.put<Eleve>(`${this.apiUrl}/${eleve.id}`, eleve);
   }
 }

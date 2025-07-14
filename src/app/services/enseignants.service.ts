@@ -34,7 +34,7 @@ export class EnseignantsService {
     return this.http.post<Enseignant>(this.apiUrl, enseignant);
   }
 
-  updateEnseignant(enseignant: Enseignant): Observable<Enseignant> {
+  editerEnseignant(enseignant: Enseignant): Observable<Enseignant> {
     return this.http.put<Enseignant>(`${this.apiUrl}/${enseignant.id}`, enseignant);
   }
 

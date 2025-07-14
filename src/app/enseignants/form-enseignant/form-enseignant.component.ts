@@ -27,9 +27,9 @@ export class FormEnseignantComponent implements OnInit {
     this.enseignantForm = this.fb.group({
       prenom: ['', Validators.required],
       nom: ['', Validators.required],
-      // ajoute d'autres champs spécifiques enseignant ici
-      email: ['', [Validators.required, Validators.email]],
-      telephone: ['']
+      matricule: ['', Validators.required],
+      telephone: [''],
+      adresse: ['']
     });
 
     this.id = Number(this.route.snapshot.paramMap.get('id'));
@@ -48,7 +48,7 @@ export class FormEnseignantComponent implements OnInit {
     const formValue = this.enseignantForm.value;
 
     if (this.isEdit) {
-      this.enseignantsService.updateEnseignant({ id: this.id, ...formValue }).subscribe({
+      this.enseignantsService.editerEnseignant({ id: this.id, ...formValue }).subscribe({
         next: () => {
           alert('Enseignant modifié avec succès');
           this.router.navigate(['/enseignants/liste-enseignants']);

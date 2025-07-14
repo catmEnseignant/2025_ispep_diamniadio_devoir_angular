@@ -21,10 +21,10 @@ export class ListeElevesComponent implements OnInit {
     });
   }
 
-  ajouter(): void {
+  addEleve(): void {
     this.router.navigate(['/form-eleve']);
   }
-  editer(eleve: any): void {
+  editer(eleve: Eleve): void {
   this.router.navigate(['/form-eleve', eleve.id]);
 }
 

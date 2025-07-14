@@ -3,7 +3,14 @@
 
   <form [formGroup]="eleveForm" (ngSubmit)="onSubmit()">
     <div class="mb-3">
-      <label for="prenom" class="form-label">Prénom</label>
+      <label for="numero_carte" class="form-label">Numero_carte</label>
+      <input id="numero_carte" formControlName="numero_carte" class="form-control" required />
+      <div *ngIf="eleveForm.get('numero_carte')?.invalid && eleveForm.get('numero_carte')?.touched" class="text-danger">
+        Le Numero_carte est requis
+      </div>
+    </div>
+    <div class="mb-3">
+      <label for="prenom" class="form-label">Prenom</label>
       <input id="prenom" formControlName="prenom" class="form-control" required />
       <div *ngIf="eleveForm.get('prenom')?.invalid && eleveForm.get('prenom')?.touched" class="text-danger">
         Le prénom est requis
@@ -26,6 +33,11 @@
     <div class="mb-3">
       <label for="telephone" class="form-label">Téléphone</label>
       <input id="telephone" formControlName="telephone" class="form-control" />
+      <div *ngIf="eleveForm.get('telephone')?.invalid && eleveForm.get('telephone')?.touched" class="text-danger">
+        Le numéro doit comporter 10 chiffres.
+      </div>
+
+
     </div>
 
     <div class="mb-3">

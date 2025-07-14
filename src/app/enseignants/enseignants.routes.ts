@@ -6,5 +6,5 @@ import { FormEnseignantComponent } from './form-enseignant/form-enseignant.compo
 export const enseignantsRoutes: Routes = [
   { path: 'liste-enseignants', component: ListeEnseignantsComponent },
   { path: 'form-enseignant', component: FormEnseignantComponent },
-  { path: 'form-enseignant/:id', component: FormEnseignantComponent }, // édition
+  { path: 'form-enseignant/:id', component: FormEnseignantComponent },
 ];

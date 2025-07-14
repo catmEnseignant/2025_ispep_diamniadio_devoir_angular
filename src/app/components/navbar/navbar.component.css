@@ -1,0 +1,66 @@
+/* Style général de la navbar */
+.navbar {
+  background-color: #1e1e2f !important; /* Couleur sombre élégante */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+  color: #fbfafc !important;
+  font-weight: bold;
+  font-size: 1.3rem;
+  transition: color 0.3s ease;
+}
+
+.navbar-brand:hover {
+  color: #4435eb !important;
+}
+
+/* Liens de la navbar */
+.navbar-nav .nav-link {
+  color: #f5f4f7 !important;
+  transition: color 0.3s ease, background-color 0.3s ease;
+  padding: 8px 16px;
+  border-radius: 4px;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+  color: #ffffff !important;
+  background-color: #4a03e4;
+}
+
+/* Toggler icon style */
+.navbar-toggler {
+  border: none;
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='%23ffffff' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255,255,255,0.7%29' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+/* Zone de contenu pour éviter chevauchement */
+body {
+  padding-top: 80px;
+}
+
+/* Formulaire de recherche */
+form.d-flex .form-control {
+  background-color: #2a2a40;
+  color: #ffffff;
+  border: 1px solid #555;
+}
+
+form.d-flex .form-control::placeholder {
+  color: #cccccc;
+}
+
+form.d-flex .btn {
+  border-color: #00d1b2;
+  color: #4830e7;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+form.d-flex .btn:hover {
+  background-color: #4c3aee;
+  color: #fff;
+}

@@ -2,17 +2,18 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule, FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
-import { ElevesService } from '../../services/eleves.service'; // adapte le chemin
+import { ElevesService, Eleve } from '../../services/eleves.service'; // adapte le chemin si besoin
+import { formatDate } from '@angular/common';
 
 @Component({
   selector: 'app-form-eleve',
   templateUrl: './form-eleve.component.html',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule], // <-- IMPORTANT
+  imports: [CommonModule, ReactiveFormsModule],
 })
 export class FormEleveComponent implements OnInit {
   eleveForm!: FormGroup;
-  id?: number;
+  id?: string; // ✅ string au lieu de number
   isEdit = false;
 
   constructor(
@@ -23,31 +24,47 @@ export class FormEleveComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    // Création du formulaire avec les validateurs
     this.eleveForm = this.fb.group({
+      numero_carte: ['', Validators.required],
       prenom: ['', Validators.required],
       nom: ['', Validators.required],
-      adresse: [''],
-      telephone: [''],
-      date_naissance: [''],
+      adresse: ['', Validators.required],
+      telephone: ['', [Validators.required, Validators.pattern(/^\d{10}$/)]],
+      date_naissance: ['', Validators.required],
     });
 
-    this.id = Number(this.route.snapshot.paramMap.get('id'));
+    // Récupération de l'ID (string)
+    this.id = this.route.snapshot.paramMap.get('id')!;
     if (this.id) {
       this.isEdit = true;
       this.eleveService.getEleveById(this.id).subscribe({
-        next: (eleve) => this.eleveForm.patchValue(eleve),
+        next: (eleve) => {
+          console.log('Élève reçu pour édition :', eleve);
+          
+          // ✅ Si nécessaire, formater la date pour l'input type="date"
+          const formattedEleve: Eleve = {
+            ...eleve,
+            date_naissance: formatDate(eleve.date_naissance, 'yyyy-MM-dd', 'en'),
+          };
+
+          this.eleveForm.patchValue(formattedEleve);
+        },
         error: (err) => console.error('Erreur chargement élève', err)
       });
     }
   }
 
   onSubmit(): void {
-    if (this.eleveForm.invalid) return;
+    if (this.eleveForm.invalid) {
+      this.eleveForm.markAllAsTouched();
+      return;
+    }
 
     const formValue = this.eleveForm.value;
 
     if (this.isEdit) {
-      this.eleveService.updateEleve({ id: this.id, ...formValue }).subscribe({
+      this.eleveService.editerEleve({ id: this.id, ...formValue }).subscribe({
         next: () => {
           alert('Élève modifié avec succès');
           this.router.navigate(['/eleves/liste-eleves']);
@@ -55,7 +72,7 @@ export class FormEleveComponent implements OnInit {
         error: () => alert('Erreur lors de la modification')
       });
     } else {
-      this.eleveService.ajouterEleve(formValue).subscribe({
+      this.eleveService.addEleve(formValue).subscribe({
         next: () => {
           alert('Élève ajouté avec succès');
           this.router.navigate(['/eleves/liste-eleves']);

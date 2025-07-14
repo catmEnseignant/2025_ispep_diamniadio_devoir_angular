@@ -24,7 +24,7 @@
       </div>
     </div>
   </nav> -->
-<nav class="navbar navbar-expand navbar-light bg-light">
+<!-- <nav class="navbar navbar-expand navbar-light bg-light">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">Accueil</a>
     <ul class="navbar-nav me-auto">
@@ -36,7 +36,41 @@
       </li>
     </ul>
   </div>
+</nav> -->
+
+
+
+<!-- Barre de navigation supérieure uniquement -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+  <div class="container-fluid">
+    <div class="container-fluid">
+        <img src="favicon.ico" [title]="title" class="img-thumbnail fw-bold" style="width: 3%">
+
+    <a class="navbar-brand" routerLink="/">Accueil</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+            aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/liste-eleves" routerLinkActive="active">Élèves</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/liste-enseignants" routerLinkActive="active">Enseignants</a>
+        </li>
+      </ul>
+      <form class="d-flex" role="search">
+            <input class="form-control me-2" type="search" placeholder="Rechercher" aria-label="Search">
+            <button class="btn btn-secondary text-white fw-bold" type="submit">Rechercher</button>
+          </form>
+    </div>
+  </div>
 </nav>
 
-<!-- Très important -->
-<router-outlet></router-outlet>
+<!-- Zone de contenu dynamique -->
+<div style="padding-top: 80px;">
+  <router-outlet></router-outlet>
+</div>
