@@ -32,7 +32,7 @@
       <tbody>
         <tr *ngFor="let eleve of eleves; let i = index">
           <th scope="row">{{ i + 1 }}</th>
-          <td>{{ eleve.numerodecarte }}</td>
+         
           <td>{{ eleve.prenom }}</td>
           <td>{{ eleve.nom }}</td>
           <td>{{ eleve.adresse }}</td>
@@ -40,11 +40,12 @@
           <td>{{ eleve.date_naissance | date:'dd/MM/yyyy' }}</td>
           <td>
             <button class="btn btn-warning btn-sm me-2" (click)="editEleve(eleve)">
-              <i class="bi bi-pencil-square"></i>
+              <i class="bi bi-pencil-square">modifier</i>
+          
             </button>
 
             <button class="btn btn-danger btn-sm" (click)="deleteEleve(eleve)">
-              <i class="bi bi-trash"></i>
+              <i class="bi bi-trash">suprimer</i>
             </button>
           </td>
         </tr>
