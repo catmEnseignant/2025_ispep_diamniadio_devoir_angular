@@ -1,14 +1,121 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Accueil - Gestion des Élèves et des Enseignants</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background-color: #f4f6f8;
+      color: #333;
+    }
+    header {
+      background-color: #2e86de;
+      color: white;
+      padding: 20px 40px;
+      text-align: center;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      background-color: #1b4f72;
+      padding: 10px 0;
+    }
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    .hero {
+      background: url('https://images.unsplash.com/photo-1588072432836-e10032774350') center/cover no-repeat;
+      color: white;
+      text-align: center;
+      padding: 100px 20px;
+    }
+    .hero h1 {
+      font-size: 3em;
+      margin-bottom: 10px;
+    }
+    .hero p {
+      font-size: 1.2em;
+    }
+    .section {
+      padding: 60px 40px;
+      text-align: center;
+    }
+    .section h2 {
+      margin-bottom: 20px;
+      color: #2e86de;
+    }
+    .features {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+    }
+    .feature {
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      padding: 20px;
+      margin: 10px;
+      width: 250px;
+    }
+    footer {
+      background-color: #2e86de;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+  </style>
+</head>
+<body>
 
-  <div class="card text-center" >
-    <div class="card-header">
-      Institut Superieur d'Enseignement Professionnelle de Diamniadio
+  <header>
+    <h1>Plateforme de Gestion des Élèves & Enseignants</h1>
+    <p>Suivi, performance et réussite scolaire</p>
+  </header>
+
+  <nav>
+    <a href="#">Accueil</a>
+    <a href="#">Élèves</a>
+    <a href="#">Enseignants</a>
+    <a href="#">Statistiques</a>
+    <a href="#">Contact</a>
+  </nav>
+
+  <section class="hero">
+    <h1>Bienvenue sur votre espace éducatif</h1>
+    <p>Une solution moderne pour gérer vos élèves efficacement</p>
+  </section>
+
+  <section class="section">
+    <h2>Fonctionnalités principales</h2>
+    <div class="features">
+      <div class="feature">
+        <h3>Suivi des élèves</h3>
+        <p>Consultez les profils, les notes et les présences en un clic.</p>
+      </div>
+      <div class="feature">
+        <h3>Gestion des classes</h3>
+        <p>Organisez vos classes et affectez les enseignants facilement.</p>
+      </div>
+      <div class="feature">
+        <h3>Statistiques avancées</h3>
+        <p>Analysez les performances globales et individuelles.</p>
+      </div>
     </div>
-    <div class="card-body">
-      <h5 class="card-title">Bienvenu sur mon premiere application Angular</h5>
-      <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-      <a href="#" class="btn btn-primary" >Go somewhere</a>
-    </div>
-    <div class="card-footer text-body-secondary">
-      ISEPD
-    </div>
-  </div>
+  </section>
+
+  <footer>
+    &copy; 2025 Plateforme Éducative. Tous droits réservés.
+  </footer>
+
+</body>
+</html>

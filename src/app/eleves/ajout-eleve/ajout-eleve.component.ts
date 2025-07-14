@@ -1,54 +1,66 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { EleveService } from '../../services/eleves/eleve.service';
+import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
 
 @Component({
-  selector: 'app-ajout-eleve',
+  selector: 'app-ajout-eleves',
   standalone: true,
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule, CommonModule, HttpClientModule],
   templateUrl: './ajout-eleve.component.html',
-  styleUrl: './ajout-eleve.component.css'
+  styleUrls: ['./ajout-eleve.component.css']
 })
-export class AjoutEleveComponent {
-  eleveform: FormGroup;
-  eleveedit: any;
-  isedit: any;
+export class AjoutElevesComponent implements OnInit {
+  eleveForm: FormGroup;
+  isEditMode = false;
 
   constructor(
     private fb: FormBuilder,
     private eleveService: EleveService,
-    private router: Router
+    public router: Router
   ) {
-    this.eleveform = this.fb.group({
+    this.eleveForm = this.fb.group({
       id: [''],
-      numero_carte: [''],
       prenom: [''],
       nom: [''],
-      adresse: [''],
-      telephone: [''],
       date_naissance: [''],
+      numero_carte: [''],
+      adresse: [''],
+      telephone: ['']
     });
   }
 
   ngOnInit(): void {
-    this.isedit = localStorage.getItem("edit");
-    if (this.isedit === "1") {
-      this.eleveedit = JSON.parse(localStorage.getItem("eleveCourant") || '{}');
-      this.eleveform.patchValue(this.eleveedit);
+    this.isEditMode = localStorage.getItem("editEleve") === "1";
+    if (this.isEditMode) {
+      const eleve = JSON.parse(localStorage.getItem("eleveCourant") || '{}');
+      this.eleveForm.patchValue(eleve);
     }
   }
 
-  storeEleve() {
-    
-      this.eleveService.addEleve(this.eleveform.value).subscribe( 
-      (response: any) => {
-        alert("Succès");
-      },
-      (error: any) => {
-        console.error("Erreur");
-      }
-    );
-      }
-  
+  onSubmit(): void {
+    const formData = this.eleveForm.value;
+
+    if (this.isEditMode) {
+      this.eleveService.updateEleve(formData.id, formData).subscribe(() => {
+        alert("Élève mis à jour !");
+        localStorage.removeItem("editEleve");
+        localStorage.removeItem("eleveCourant");
+        this.router.navigate(['/eleves/list-eleves']);
+      }, error => {
+        console.error("Erreur mise à jour", error);
+        alert("Erreur lors de la mise à jour !");
+      });
+    } else {
+      this.eleveService.storeEleve(formData).subscribe(() => {
+        alert("Élève ajouté !");
+        this.router.navigate(['/eleves/list-eleves']);
+      }, error => {
+        console.error("Erreur ajout", error);
+        alert("Erreur lors de l'ajout !");
+      });
+    }
+  }
 }

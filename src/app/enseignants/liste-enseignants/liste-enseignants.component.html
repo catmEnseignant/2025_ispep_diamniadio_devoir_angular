@@ -1,62 +1,53 @@
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<div class="container my-4">
+  <div class="d-flex justify-content-between align-items-center mb-3">
+    <h3 class="text-primary">👩‍🏫 Liste des enseignants</h3>
+    <button class="btn btn-success shadow-sm" (click)="addEnseignant()">
+      <i class="fas fa-plus-circle me-2"></i> Ajouter un enseignant
+    </button>
+  </div>
 
-<div class="card container-fluid">
-
-  <div class="card-header">
-    <div class="row">
-      <div class="col-4">
-        <h4>Liste des enseignants</h4>
-      </div>
-
-      <div class="col-4">
-        <h4 *ngIf="enseignants">Nombre d'enseignants : {{enseignants.length}}</h4>
-      </div>
-
-      <div class="col-4">
-        <button type="button" class="btn btn-primary" (click)="addEnseignant()">Ajouter un enseignant</button>
-      </div>
+  <div class="card shadow-sm">
+    <div class="card-body p-0">
+      <table class="table table-hover table-bordered mb-0">
+        <thead class="table-dark text-center">
+          <tr>
+            <th>Prénom</th>
+            <th>Nom</th>
+            <th>Matricule</th>
+            <th>Adresse</th>
+            <th>Téléphone</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody *ngIf="enseignants && enseignants.length > 0">
+          <tr *ngFor="let enseignant of enseignants" class="text-center align-middle">
+            <td>{{ enseignant.prenom }}</td>
+            <td>{{ enseignant.nom }}</td>
+            <td>{{ enseignant.matricule }}</td>
+            <td>{{ enseignant.adresse }}</td>
+            <td>{{ enseignant.telephone }}</td>
+            <td>
+              <button class="btn btn-outline-primary btn-sm me-2" (click)="editEnseignant(enseignant)">
+                <i class="fas fa-edit"></i>
+              </button>
+              <button class="btn btn-outline-danger btn-sm" (click)="deleteEnseignant(enseignant)">
+                <i class="fas fa-trash"></i>
+              </button>
+            </td>
+          </tr>
+        </tbody>
+        <tbody *ngIf="enseignants && enseignants.length === 0">
+          <tr>
+            <td colspan="6" class="text-center text-muted py-4">
+              Aucun enseignant trouvé pour le moment.
+            </td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </div>
 
-  <div class="card-body">
-    <table class="table" *ngIf="enseignants && enseignants.length > 0">
-      <thead>
-        <tr>
-          <th scope="col">Prénom</th>
-          <th scope="col">Nom</th>
-          <th scope="col"> Matricule</th>
-          <th scope="col">Adresse</th>
-          <th scope="col">Téléphone</th>
-          <th scope="col">Actions</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let enseignant of enseignants">
-          <th scope="row">{{enseignant.prenom}}</th>
-          <td>{{enseignant.nom}}</td>
-          <td>{{enseignant. matricule}}</td>
-          <td>{{enseignant.adresse}}</td>
-          <td>{{enseignant.telephone}}</td>
-          <td>{{enseignant.telephone}}</td>
-          <td>
-            <button (click)="deleteEnseignant()">
-              <i class="fas fa-trash delete-icon"></i>
-            </button>
-          </td>
-          <td>
-            <button (click)="editEnseignant(enseignant)">
-              <svg class="edit-icon" xmlns="http://www.w3.org/2000/svg" height="24" width="24" fill="#0275d8" viewBox="0 0 24 24">
-                <path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04a1.003 1.003 0 0 0 0-1.42l-2.34-2.34a1.003 1.003 0 0 0-1.42 0l-1.83 1.83 3.75 3.75 1.84-1.82z"/>
-              </svg>
-            </button>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-
-    <!-- message si aucun enseignant trouvé -->
-    <p *ngIf="enseignants && enseignants.length === 0">
-      Aucun enseignant trouvé pour le moment.
-    </p>
+  <div class="text-end mt-2 text-muted" *ngIf="enseignants">
+    <small>Total : {{ enseignants.length }} enseignant(s)</small>
   </div>
 </div>

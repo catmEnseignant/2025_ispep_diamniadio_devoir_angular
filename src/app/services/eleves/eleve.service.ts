@@ -1,32 +1,26 @@
-import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable({ providedIn: 'root' })
 export class EleveService {
+  private apiUrl = 'http://localhost:3000/eleves';
 
-  private host = 'http://localhost:3000';
+  constructor(private http: HttpClient) {}
 
-  constructor(private httpClient: HttpClient) {}
-  
-  getEleve() {
-    return this.httpClient.get(`${this.host}/eleves`);
+  getEleves(): Observable<any[]> {
+    return this.http.get<any[]>(this.apiUrl);
   }
 
-  // storeEleve(eleve: any) {
-  //   return this.httpClient.post(`${this.host}/eleves`, eleve);
-  // }
-
-  addEleve(formData: any) {
-    return this.httpClient.post(`${this.host}/eleves/ajout-eleve`, formData);
+  storeEleve(data: any): Observable<any> {
+    return this.http.post(this.apiUrl, data);
   }
 
-  updateEleve(formData: any) {
-    return this.httpClient.put(`${this.host}/eleves/${formData.numero_carte}`, formData);
+  updateEleve(id: number | string, data: any): Observable<any> {
+    return this.http.put(`${this.apiUrl}/${id}`, data);
   }
 
-  deleteEleve(numero_carte: string) {
-    return this.httpClient.delete(`${this.host}/eleves/${numero_carte}`);
+  deleteEleve(id: number | string): Observable<any> {
+    return this.http.delete(`${this.apiUrl}/${id}`);
   }
 }

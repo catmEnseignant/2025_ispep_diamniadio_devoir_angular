@@ -1,46 +1,67 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { EnseignantService } from '../../services/enseignants/enseignant.service';
 
 @Component({
   selector: 'app-liste-enseignants',
+  standalone: true,
   imports: [CommonModule],
   templateUrl: './liste-enseignants.component.html',
-  styleUrl: './liste-enseignants.component.css'
+  styleUrls: ['./liste-enseignants.component.css']
 })
-export class ListeEnseignantsComponent {
-  enseignants: any;
+export class ListeEnseignantsComponent implements OnInit {
+  enseignants: any[] = [];
 
-  constructor(private route: Router, private enseignantService: EnseignantService) {
-    console.log('constructeur');
+  constructor(
+    private router: Router,
+    private enseignantService: EnseignantService
+  ) {}
+
+  ngOnInit(): void {
+    this.loadEnseignants();
   }
 
-  ngOnInit() {
+  loadEnseignants(): void {
     this.enseignantService.getEnseignant().subscribe(
       (response) => {
         this.enseignants = response;
       },
       (error) => {
-        console.log(error);
+        console.error('Erreur lors de la récupération des enseignants :', error);
       }
     );
   }
 
-  addEnseignant() {
-    localStorage.setItem("editEnseignants", "0");
-    return this.route.navigate(["enseignants/ajout-enseignants"]);
+  addEnseignant(): void {
+    localStorage.setItem("editEnseignant", "0");
+    this.router.navigate(["enseignants/ajout-enseignants"]);
   }
 
-  editEnseignant(edit: any) {
-    console.log(edit);
-    edit = JSON.stringify(edit);
-    localStorage.setItem("enseignantCourant", edit);
+  editEnseignant(enseignant: any): void {
+    console.log("Édition de l'enseignant :", enseignant);
+    localStorage.setItem("enseignantCourant", JSON.stringify(enseignant));
     localStorage.setItem("editEnseignant", "1");
-    return this.route.navigate(["enseignants/ajout-enseignants"]);
+    this.router.navigate(["enseignants/ajout-enseignants"]);
   }
 
-  deleteEnseignant() {
-    return this.route.navigate(["enseignants/liste-enseignants"]);
+  deleteEnseignant(enseignant: any): void {
+    if (confirm(`Supprimer l'enseignant ${enseignant.nom} ?`)) {
+      if (!enseignant.id) {
+        alert("Identifiant de l'enseignant manquant !");
+        return;
+      }
+
+      this.enseignantService.deleteEnseignant(enseignant.id).subscribe(
+        () => {
+          this.enseignants = this.enseignants.filter((e) => e.id !== enseignant.id);
+          alert("Enseignant supprimé avec succès !");
+        },
+        (error) => {
+          console.error('Erreur lors de la suppression de l’enseignant :', error);
+          alert("Erreur lors de la suppression !");
+        }
+      );
+    }
   }
 }

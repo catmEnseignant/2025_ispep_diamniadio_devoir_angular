@@ -5,5 +5,5 @@ import { AjoutEnseignantsComponent } from './ajout-enseignants/ajout-enseignants
 export const ENSEIGNANTS_ROUTES : Routes = [
    {path:"list-enseignants",component:ListeEnseignantsComponent},
    {path:"ajout-enseignants",component:AjoutEnseignantsComponent},
-   {path:"",redirectTo:"/list-eleves",pathMatch:"full"} 
+   {path:"",redirectTo:"/liste-enseignants",pathMatch:"full"} 
 ];
