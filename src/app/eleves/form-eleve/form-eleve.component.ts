@@ -73,11 +73,15 @@ export class FormEleveComponent implements OnInit {
       });
     } else {
       this.eleveService.addEleve(formValue).subscribe({
-        next: () => {
+        next: (response) => {
           alert('Élève ajouté avec succès');
           this.router.navigate(['/eleves/liste-eleves']);
+          console.log(response)
         },
-        error: () => alert('Erreur lors de l\'ajout')
+        error: (error) =>{
+          console.log(error);
+           alert('Erreur lors de l\'ajout')
+        } 
       });
     }
   }

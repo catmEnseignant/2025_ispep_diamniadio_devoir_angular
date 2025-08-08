@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { environnement } from '../../environnements/environnement';
 
 export interface Eleve {
   id?: string;
@@ -17,7 +18,7 @@ export interface Eleve {
   providedIn: 'root'
 })
 export class ElevesService {
-  private apiUrl = 'http://localhost:3000/eleves'; // adapte selon ton backend
+  private apiUrl = environnement.host+"/eleves"; // adapte selon ton backend
 
   constructor(private http: HttpClient) {}
 
@@ -34,6 +35,7 @@ export class ElevesService {
   }
 
   addEleve(eleve: Eleve): Observable<Eleve> {
+    console.log("tester")
     return this.http.post<Eleve>(this.apiUrl, eleve);
   }
 

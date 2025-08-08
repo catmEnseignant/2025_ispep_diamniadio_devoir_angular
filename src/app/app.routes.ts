@@ -11,12 +11,12 @@ export const routes: Routes = [
   // Routes Élèves
   { path: 'liste-eleves', component: ListeElevesComponent },
   { path: 'form-eleve', component: FormEleveComponent },
-  { path: 'form-eleve/:id', component: FormEleveComponent },
+  // { path: 'form-eleve/:id', component: FormEleveComponent },
 
   // Routes Enseignants
   { path: 'liste-enseignants', component: ListeEnseignantsComponent },
   { path: 'form-enseignant', component: FormEnseignantComponent },
-  { path: 'form-enseignant/:id', component: FormEnseignantComponent },
+  // { path: 'form-enseignant/:id', component: FormEnseignantComponent },
 
   // Redirection inconnue
   { path: '**', redirectTo: '', pathMatch: 'full' }

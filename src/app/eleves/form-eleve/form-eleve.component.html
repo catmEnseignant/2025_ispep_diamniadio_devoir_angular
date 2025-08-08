@@ -40,11 +40,6 @@
 
     </div>
 
-    <div class="mb-3">
-      <label for="date_naissance" class="form-label">Date de naissance</label>
-      <input id="date_naissance" type="date" formControlName="date_naissance" class="form-control" />
-    </div>
-
     <button type="submit" class="btn btn-primary" [disabled]="eleveForm.invalid">
       {{ isEdit ? 'Modifier' : 'Ajouter' }}
     </button>
